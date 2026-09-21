@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Larch Vaultmere</title>
+  <meta name="description" content="Learn about Larch Vaultmere — our mission to make crypto trading smarter, safer and more accessible for everyone." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts: Manrope (headings), Inter (body), JetBrains Mono (numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Larch Vaultmere home">
+        <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#10161e" stroke="rgba(16,185,129,0.35)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgH)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__links" id="nav-links">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link active" href="about-us.html" aria-current="page">About Us</a></li>
+          <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="nav__link" href="faq.html">FAQ</a></li>
+          <li><a class="nav__link" href="contact-us.html">Contact Us</a></li>
+          <li class="nav__drawer-cta"><a class="btn btn--primary" href="sign-up.html">Get Started</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary" href="sign-up.html">Get Started</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">About Us</p>
+        <h1 class="page-hero__title">Built for the modern crypto investor</h1>
+        <p class="page-hero__sub">We believe intelligent tools should be available to everyone — not just Wall Street. That&rsquo;s why we built Larch Vaultmere: real-time data, AI-powered strategies and bank-grade security, in one simple platform.</p>
+      </div>
+    </section>
+
+    <!-- ===== Story ===== -->
+    <section class="section">
+      <div class="container security">
+        <div class="security__copy">
+          <p class="section-label">Our Story</p>
+          <h2 class="section__title">Trading shouldn&rsquo;t be a full-time job</h2>
+          <p class="security__lead">Most people don&rsquo;t have time to watch charts around the clock. We built Larch Vaultmere to change that — combining live market data with automated strategies that work while you sleep, so trading fits around your life instead of taking it over.</p>
+          <p class="security__lead">Whether you&rsquo;re taking your first step into crypto or you&rsquo;ve been trading for years, our platform meets you where you are — with tools that are powerful when you need them and simple when you don&rsquo;t.</p>
+        </div>
+        <div class="security__visual reveal">
+          <div class="status-card">
+            <div class="status-card__head">
+              <span class="status-card__title">What we stand for</span>
+            </div>
+            <ul class="status-card__rows">
+              <li><span>Transparency</span><span class="status-ok">No hidden fees</span></li>
+              <li><span>Security</span><span class="status-ok">Bank-grade</span></li>
+              <li><span>Simplicity</span><span class="status-ok">Built for everyone</span></li>
+              <li><span>Support</span><span class="status-ok">24/7 humans</span></li>
+            </ul>
+            <div class="status-card__shield" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Mission cards ===== -->
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <div>
+            <p class="section-label">Our Mission</p>
+            <h2 class="section__title">Three promises we make to every user</h2>
+          </div>
+        </div>
+
+        <div class="bento">
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">Innovation without complexity</h3>
+            <p>Advanced AI under the hood, a clean and simple experience on top. Powerful tools should never feel overwhelming.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">Trust through transparency</h3>
+            <p>Published fees, honest communication and no fine print. If we wouldn&rsquo;t be proud to explain it, we won&rsquo;t ship it.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><rect x="3" y="13" width="4" height="7" rx="2" stroke="currentColor" stroke-width="2" /><rect x="17" y="13" width="4" height="7" rx="2" stroke="currentColor" stroke-width="2" /></svg>
+            </span>
+            <h3 class="bento__title">People before profits</h3>
+            <p>Real humans answer our support lines 24/7. Your questions deserve answers, not ticket numbers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats band ===== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat">
+          <span class="stat__num" data-count="60" data-suffix="+">60+</span>
+          <span class="stat__label">Cryptocurrencies supported</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">24/7</span>
+          <span class="stat__label">Market monitoring</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">$0</span>
+          <span class="stat__label">Hidden fees — ever</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="99.9" data-suffix="%">99.9%</span>
+          <span class="stat__label">Platform uptime</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <p class="section-label">Join Us</p>
+          <h2 class="cta-panel__title">See what smarter trading feels like</h2>
+          <p class="cta-panel__text">Create your free account in minutes and explore live markets, AI strategies and bank-grade security.</p>
+          <a class="btn btn--gold btn--lg" href="sign-up.html">Create Free Account</a>
+          <p class="cta-panel__fine">No credit card required &middot; Withdraw anytime &middot; 2FA secured</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="index.html" aria-label="Larch Vaultmere home">
+            <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0d1318" stroke="rgba(16,185,129,0.3)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgF)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
+          </a>
+          <p class="footer__tagline">Intelligent crypto trading for everyone.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Platform links">
+          <h3 class="footer__heading">Platform</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Legal links">
+          <h3 class="footer__heading">Legal</h3>
+          <ul class="footer__links">
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+            <li><a href="sign-up.html">Get Started</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__disclaimer">
+        <p><strong>Risk disclaimer:</strong> Cryptocurrency trading involves significant risk and may not be suitable for everyone. Prices can move sharply in either direction, and you may lose some or all of your funds. Past performance does not guarantee future results, and no automated tool can guarantee returns. Nothing on this website is financial advice — always do your own research and only trade money you can afford to lose.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year">2026</span> Larch Vaultmere. All rights reserved.</p>
+        <p class="footer__legal"><a href="terms-of-use.html">Terms of Use</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="risk-disclosure.html">Risk Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

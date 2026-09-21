@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Larch Vaultmere</title>
+  <meta name="description" content="Get in touch with the Larch Vaultmere team — questions, feedback or support. Our human support team is available 24/7." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts: Manrope (headings), Inter (body), JetBrains Mono (numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Larch Vaultmere home">
+        <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#10161e" stroke="rgba(16,185,129,0.35)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgH)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__links" id="nav-links">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="about-us.html">About Us</a></li>
+          <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="nav__link" href="faq.html">FAQ</a></li>
+          <li><a class="nav__link active" href="contact-us.html" aria-current="page">Contact Us</a></li>
+          <li class="nav__drawer-cta"><a class="btn btn--primary" href="sign-up.html">Get Started</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary" href="sign-up.html">Get Started</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Page hero ===== -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label">Contact Us</p>
+        <h1 class="page-hero__title">We&rsquo;re here to help</h1>
+        <p class="page-hero__sub">Questions, feedback or need a hand with your account? Send us a message — our human support team is available 24/7.</p>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="auth__form-card reveal">
+          <h2 class="auth__form-title">Email Us Anytime</h2>
+          <p class="auth__form-sub">Fill in the form and we&rsquo;ll get back to you within a few hours.</p>
+
+          <form id="contact-form" novalidate>
+            <div class="form__row">
+              <div class="form-field">
+                <label class="form-label" for="contact-first">First name</label>
+                <input class="form-input" type="text" id="contact-first" name="firstName" placeholder="e.g. Ali" autocomplete="given-name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="contact-last">Last name</label>
+                <input class="form-input" type="text" id="contact-last" name="lastName" placeholder="e.g. Khan" autocomplete="family-name" required />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="contact-email">Email</label>
+              <input class="form-input" type="email" id="contact-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="contact-phone">Phone</label>
+              <div class="form__phone">
+                <select class="form-input form__ccode" id="contact-ccode" aria-label="Country code">
+                  <option value="+1">US +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+61">AU +61</option>
+                  <option value="+92">PK +92</option>
+                  <option value="+971">AE +971</option>
+                  <option value="+966">SA +966</option>
+                  <option value="+91">IN +91</option>
+                  <option value="+49">DE +49</option>
+                  <option value="+33">FR +33</option>
+                  <option value="+39">IT +39</option>
+                  <option value="+34">ES +34</option>
+                  <option value="+65">SG +65</option>
+                  <option value="+86">CN +86</option>
+                  <option value="+81">JP +81</option>
+                  <option value="+27">ZA +27</option>
+                  <option value="+7">RU +7</option>
+                </select>
+                <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="300 1234567" autocomplete="tel" required />
+              </div>
+            </div>
+
+            <!-- Honeypot — hidden from humans, catches spam bots -->
+            <div class="form__honey" aria-hidden="true">
+              <label for="contact-company">Leave this field empty</label>
+              <input type="text" id="contact-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <label class="form-check">
+              <input type="checkbox" id="contact-consent" required />
+              <span>I agree to the <a href="privacy-policy.html">Privacy Policy</a> and consent to being contacted about my enquiry.</span>
+            </label>
+
+            <p class="form-error" id="contact-error" role="alert"></p>
+
+            <button class="btn btn--gold btn--lg" type="submit" id="contact-submit" style="width:100%;">Send Message</button>
+            <p class="form-success" id="contact-success" role="status"></p>
+            <p class="form-note">Protected by 2FA and 256-bit SSL encryption</p>
+          </form>
+        </div>
+
+        <div class="reveal">
+          <div class="contact-info-card">
+            <h2 class="contact-info-card__title">Other ways to reach us</h2>
+            <ul class="contact-info">
+              <li>
+                <span class="contact-info__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.5 7.5L12 14l9.5-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </span>
+                <div>
+                  <h3>Email us</h3>
+                  <p><a href="mailto:hello@larch-valultmere.com" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">hello@larch-valultmere.com</a></p>
+                </div>
+              </li>
+              <li>
+                <span class="contact-info__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" /><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </span>
+                <div>
+                  <h3>Response time</h3>
+                  <p>Most messages are answered within a few hours, 24/7.</p>
+                </div>
+              </li>
+              <li>
+                <span class="contact-info__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><rect x="3" y="13" width="4" height="7" rx="2" stroke="currentColor" stroke-width="2" /><rect x="17" y="13" width="4" height="7" rx="2" stroke="currentColor" stroke-width="2" /></svg>
+                </span>
+                <div>
+                  <h3>Support hours</h3>
+                  <p>Round the clock — real humans, every day of the year.</p>
+                </div>
+              </li>
+              <li>
+                <span class="contact-info__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-8.5 8.5 8.5 8.5 0 01-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 01-.9-3.8 8.38 8.38 0 018.5-8.5 8.38 8.38 0 018.5 8.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                </span>
+                <div>
+                  <h3>Quick answers</h3>
+                  <p>Check the <a href="faq.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">FAQ page</a> — most questions are answered there instantly.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="index.html" aria-label="Larch Vaultmere home">
+            <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0d1318" stroke="rgba(16,185,129,0.3)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgF)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
+          </a>
+          <p class="footer__tagline">Intelligent crypto trading for everyone.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Platform links">
+          <h3 class="footer__heading">Platform</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Legal links">
+          <h3 class="footer__heading">Legal</h3>
+          <ul class="footer__links">
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+            <li><a href="sign-up.html">Get Started</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__disclaimer">
+        <p><strong>Risk disclaimer:</strong> Cryptocurrency trading involves significant risk and may not be suitable for everyone. Prices can move sharply in either direction, and you may lose some or all of your funds. Past performance does not guarantee future results, and no automated tool can guarantee returns. Nothing on this website is financial advice — always do your own research and only trade money you can afford to lose.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year">2026</span> Larch Vaultmere. All rights reserved.</p>
+        <p class="footer__legal"><a href="terms-of-use.html">Terms of Use</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="risk-disclosure.html">Risk Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

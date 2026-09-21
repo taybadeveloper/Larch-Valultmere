@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Larch Vaultmere — Intelligent Crypto Trading Platform</title>
+  <meta name="description" content="Larch Vaultmere combines real-time market data with advanced AI strategies to help you trade crypto with confidence — live prices, automated strategies, and bank-grade security." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts: Manrope (headings), Inter (body), JetBrains Mono (numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+
+  <!-- ===== Announcement bar (dismissible) ===== -->
+  <div class="announcement" id="announcement" role="region" aria-label="Announcement">
+    <p class="announcement__text">Welcome to the new Larch Vaultmere — live market data is now available for 60+ coins.</p>
+    <button class="announcement__close" id="announcement-close" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Larch Vaultmere home">
+        <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#10161e" stroke="rgba(16,185,129,0.35)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgH)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__links" id="nav-links">
+          <li><a class="nav__link active" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="about-us.html">About Us</a></li>
+          <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
+          <li><a class="nav__link" href="faq.html">FAQ</a></li>
+          <li><a class="nav__link" href="contact-us.html">Contact Us</a></li>
+          <li class="nav__drawer-cta"><a class="btn btn--primary" href="sign-up.html">Get Started</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary" href="sign-up.html">Get Started</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero__blob hero__blob--one" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--two" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__badge">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            AI-Powered Crypto Trading
+          </p>
+          <h1 class="hero__title">Trade smarter.<br />Invest with <em>confidence</em>.</h1>
+          <p class="hero__sub">
+            Larch Vaultmere combines real-time market data with advanced AI strategies to help you
+            spot opportunities and manage risk — whether you&rsquo;re a beginner or a seasoned trader.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--gold btn--lg" href="sign-up.html">Start Trading</a>
+            <a class="btn btn--ghost btn--lg" href="#markets">View Live Markets</a>
+          </div>
+
+          <ul class="hero__points" aria-label="Platform highlights">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg> No hidden fees</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg> Withdraw anytime</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg> 2FA secured</li>
+          </ul>
+        </div>
+
+        <!-- Dashboard preview (CSS-drawn; prices & chart filled by JS from live API) -->
+        <div class="hero__visual reveal">
+          <div class="dash">
+            <div class="dash__bar">
+              <span class="dash__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="dash__title">Larch Vaultmere — Live Markets</span>
+              <span class="dash__live"><i aria-hidden="true"></i> LIVE</span>
+            </div>
+            <div class="dash__body">
+              <div class="dash__market">
+                <div class="dash__market-head">
+                  <span class="dash__market-name">Bitcoin <small>BTC/USD</small></span>
+                  <span class="dash__market-price" id="dash-btc-big">&mdash;</span>
+                  <span class="dash__market-chg" id="dash-btc-big-chg">&mdash;</span>
+                </div>
+                <div class="dash__chart" id="dash-chart">
+                  <p class="ticker__loading">Loading 7-day chart&hellip;</p>
+                </div>
+                <ul class="dash__stats">
+                  <li><span>24h High</span><strong id="dash-btc-high">&mdash;</strong></li>
+                  <li><span>24h Low</span><strong id="dash-btc-low">&mdash;</strong></li>
+                  <li><span>24h Volume</span><strong id="dash-btc-vol">&mdash;</strong></li>
+                </ul>
+              </div>
+
+              <ul class="dash__coins">
+                <li class="dash__coin" data-coin="bitcoin">
+                  <i class="coin-dot coin-dot--btc" aria-hidden="true"></i>
+                  <span class="dash__coin-sym">BTC</span>
+                  <span class="dash__coin-price" id="dash-btc-price">&mdash;</span>
+                  <span class="dash__coin-chg" id="dash-btc-chg">&mdash;</span>
+                </li>
+                <li class="dash__coin" data-coin="ethereum">
+                  <i class="coin-dot coin-dot--eth" aria-hidden="true"></i>
+                  <span class="dash__coin-sym">ETH</span>
+                  <span class="dash__coin-price" id="dash-eth-price">&mdash;</span>
+                  <span class="dash__coin-chg" id="dash-eth-chg">&mdash;</span>
+                </li>
+                <li class="dash__coin" data-coin="solana">
+                  <i class="coin-dot coin-dot--sol" aria-hidden="true"></i>
+                  <span class="dash__coin-sym">SOL</span>
+                  <span class="dash__coin-price" id="dash-sol-price">&mdash;</span>
+                  <span class="dash__coin-chg" id="dash-sol-chg">&mdash;</span>
+                </li>
+              </ul>
+              <p class="dash__foot">Prices &amp; chart are live &mdash; refreshed every 60 seconds</p>
+            </div>
+          </div>
+
+          <!-- Floating accent cards -->
+          <div class="float-card float-card--signal" aria-hidden="true">
+            <span class="float-card__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <div>
+              <strong>AI Signal</strong>
+              <small>Bullish momentum detected</small>
+            </div>
+          </div>
+
+          <div class="float-card float-card--secure" aria-hidden="true">
+            <span class="float-card__icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <div>
+              <strong>2FA Secured</strong>
+              <small>Account protected</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Live ticker strip ===== -->
+    <div class="ticker-strip">
+      <div class="container ticker-wrap" aria-label="Live cryptocurrency prices">
+        <span class="ticker-strip__tag">LIVE</span>
+        <div class="ticker" id="ticker">
+          <p class="ticker__loading">Loading live prices&hellip;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat">
+          <span class="stat__num" data-count="60" data-suffix="+">60+</span>
+          <span class="stat__label">Cryptocurrencies supported</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">24/7</span>
+          <span class="stat__label">Market monitoring</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">$0</span>
+          <span class="stat__label">Hidden fees — ever</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="99.9" data-suffix="%">99.9%</span>
+          <span class="stat__label">Platform uptime</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Live markets ===== -->
+    <section class="section" id="markets">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="section-label">Live Markets</p>
+            <h2 class="section__title">Track prices across 60+ cryptocurrencies</h2>
+          </div>
+          <p class="section__aside">Real market data from the CoinGecko public API — updated every 60 seconds.</p>
+        </div>
+
+        <div class="markets" id="markets-body" aria-label="Live cryptocurrency prices">
+          <p class="markets__loading">Loading live market data&hellip;</p>
+        </div>
+        <p class="markets__source">Data by CoinGecko public API &middot; prices may be delayed</p>
+      </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section class="section section--tint" id="how-it-works">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <div>
+            <p class="section-label">How It Works</p>
+            <h2 class="section__title">From sign-up to first trade in four steps</h2>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">1</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" /></svg>
+            </span>
+            <h3 class="step__title">Create your free account</h3>
+            <p class="step__text">Sign up with your email in minutes. No credit card required to explore the platform.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">2</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="step__title">Fund your wallet securely</h3>
+            <p class="step__text">Deposit with your preferred payment method and set a budget you&rsquo;re comfortable with.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">3</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="step__title">Activate AI strategies</h3>
+            <p class="step__text">Choose a strategy that matches your goals and risk level — the engine handles the rest.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">4</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M14 8h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="step__title">Track &amp; grow</h3>
+            <p class="step__text">Monitor performance in real time from your dashboard and withdraw whenever you like.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Features (bento grid) ===== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="section-label">Features</p>
+            <h2 class="section__title">Everything a modern trader needs</h2>
+          </div>
+          <a class="btn btn--ghost" href="sign-up.html">Get Started &rarr;</a>
+        </div>
+
+        <div class="bento">
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M14 8h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">Real-time market insights</h3>
+            <p>Live prices, trends and 7-day sparklines for 60+ coins — refreshed every 60 seconds.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">AI-powered strategies</h3>
+            <p class="bento__text">Automated strategies that watch the market 24/7 and act on signals — without the emotions.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">Bank-grade security</h3>
+            <p class="bento__text">2FA, encryption and cold storage keep your account and funds protected around the clock.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" /><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">Fast withdrawals</h3>
+            <p class="bento__text">Request a payout anytime — most withdrawals are processed within 24 hours.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><rect x="3" y="13" width="4" height="7" rx="2" stroke="currentColor" stroke-width="2" /><rect x="17" y="13" width="4" height="7" rx="2" stroke="currentColor" stroke-width="2" /></svg>
+            </span>
+            <h3 class="bento__title">24/7 human support</h3>
+            <p class="bento__text">Real people on standby around the clock — whenever you need a hand, we&rsquo;re there.</p>
+          </article>
+
+          <article class="bento__card reveal">
+            <span class="bento__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </span>
+            <h3 class="bento__title">Transparent pricing</h3>
+            <p class="bento__text">Simple, published fees on every transaction. No hidden charges — ever.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Security ===== -->
+    <section class="section section--tint" id="security">
+      <div class="container security">
+        <div class="security__copy">
+          <p class="section-label">Security First</p>
+          <h2 class="section__title">Your security is our top priority</h2>
+          <p class="security__lead">We protect your account at every layer — from login to storage — using the same standards trusted by leading financial institutions.</p>
+
+          <ul class="security__list">
+            <li class="reveal">
+              <span class="security__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <div>
+                <h3>256-bit encryption</h3>
+                <p>All data in transit and at rest is encrypted to industry standards.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="security__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <div>
+                <h3>Two-factor authentication</h3>
+                <p>An extra verification layer on every login and withdrawal.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="security__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <div>
+                <h3>Cold storage for funds</h3>
+                <p>The majority of assets are held offline, away from online threats.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="security__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+              <div>
+                <h3>24/7 threat monitoring</h3>
+                <p>Automated systems watch for suspicious activity day and night.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="security__visual reveal">
+          <div class="status-card">
+            <div class="status-card__head">
+              <span class="status-card__title">System Status</span>
+              <span class="status-card__live"><i aria-hidden="true"></i> LIVE</span>
+            </div>
+            <ul class="status-card__rows">
+              <li><span>All systems operational</span><span class="status-ok"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span></li>
+              <li><span>Two-factor authentication</span><span class="status-ok">Enabled</span></li>
+              <li><span>Funds in cold storage</span><span class="status-ok">Secured</span></li>
+              <li><span>Last security audit</span><span class="status-muted">This quarter</span></li>
+            </ul>
+            <div class="status-card__shield" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head section__head--center">
+          <div>
+            <p class="section-label">FAQ</p>
+            <h2 class="section__title">Frequently asked questions</h2>
+          </div>
+        </div>
+
+        <div class="faq">
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              What is Larch Vaultmere?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>Larch Vaultmere is a crypto trading platform that combines real-time market data with AI-powered strategies — helping you make informed decisions without watching charts all day.</p></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Is Larch Vaultmere suitable for beginners?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>Yes. The platform is designed for everyone — clear dashboards, guided setup, and strategies you can activate in one click. You can also start small and learn as you go.</p></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Which cryptocurrencies can I trade?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>We support 60+ coins including Bitcoin, Ethereum, Solana, Litecoin, Ripple and many more. The full list is available in the Markets section of your dashboard.</p></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              How do deposits and withdrawals work?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>Deposit with your preferred payment method and funds appear in your wallet after confirmation. Withdrawals can be requested anytime — most are processed within 24 hours.</p></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              What fees do you charge?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>Our fees are simple and published — no hidden charges. Every fee is shown on the pricing page and on each transaction before you confirm it.</p></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Is my data and money secure?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>Security is our top priority: 256-bit encryption, two-factor authentication, cold storage for the majority of funds, and 24/7 threat monitoring.</p></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__question" aria-expanded="false">
+              Do you guarantee profits?
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq__answer"><p>No — and you should be wary of any platform that does. Crypto trading involves real risk, and no tool can guarantee returns. Trade only what you can afford to lose.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section" id="get-started">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <p class="section-label">Get Started</p>
+          <h2 class="cta-panel__title">Ready to take your trading to the next level?</h2>
+          <p class="cta-panel__text">Create your free account in minutes and explore live markets, AI strategies and bank-grade security.</p>
+          <a class="btn btn--gold btn--lg" href="sign-up.html">Create Free Account</a>
+          <p class="cta-panel__fine">No credit card required &middot; Withdraw anytime &middot; 2FA secured</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--light" href="#top" aria-label="Larch Vaultmere home">
+            <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0d1318" stroke="rgba(16,185,129,0.3)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgF)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
+          </a>
+          <p class="footer__tagline">Intelligent crypto trading for everyone.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Platform links">
+          <h3 class="footer__heading">Platform</h3>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Legal links">
+          <h3 class="footer__heading">Legal</h3>
+          <ul class="footer__links">
+            <li><a href="terms-of-use.html">Terms of Use</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
+            <li><a href="sign-up.html">Get Started</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__disclaimer">
+        <p><strong>Risk disclaimer:</strong> Cryptocurrency trading involves significant risk and may not be suitable for everyone. Prices can move sharply in either direction, and you may lose some or all of your funds. Past performance does not guarantee future results, and no automated tool can guarantee returns. Nothing on this website is financial advice — always do your own research and only trade money you can afford to lose.</p>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="footer-year">2026</span> Larch Vaultmere. All rights reserved.</p>
+        <p class="footer__legal"><a href="terms-of-use.html">Terms of Use</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="risk-disclosure.html">Risk Disclosure</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
