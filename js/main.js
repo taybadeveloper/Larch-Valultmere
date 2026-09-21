@@ -22,7 +22,7 @@ const CONFIG = {
   MARKET_ROWS: 8, // rows in the Live Markets table (top coins by market cap)
   REFRESH_MS: 60 * 1000, // 60 seconds
   STORAGE_KEYS: {
-    announcement: "binnacrest-announcement-dismissed",
+    announcement: "larch-vaultmere-announcement-dismissed",
   },
 };
 

@@ -20,7 +20,7 @@ A professional **light-theme** crypto trading website, built in **plain HTML + C
 ## File structure
 
 ```
-binnacrest-ai/
+larch-vaultmere/
 ├── index.html            ← home page
 ├── about-us.html
 ├── how-it-works.html
