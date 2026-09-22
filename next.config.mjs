@@ -1,0 +1,12 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async redirects() {
+    return [
+      // Preserve the old Vercel cleanUrls behavior: /x.html -> /x (308 permanent)
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/:path*.html", destination: "/:path*", permanent: true },
+    ];
+  },
+};
+
+export default nextConfig;
