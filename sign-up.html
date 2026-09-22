@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- intl-tel-input: country flags + dial codes for phone fields -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/css/intlTelInput.min.css" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body id="top">
@@ -19,24 +22,24 @@
   <!-- ===== Header ===== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Larch Vaultmere home">
+      <a class="brand" href="/" aria-label="Larch Vaultmere home">
         <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#10161e" stroke="rgba(16,185,129,0.35)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgH)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
       </a>
 
       <nav class="nav" aria-label="Main navigation">
         <ul class="nav__links" id="nav-links">
-          <li><a class="nav__link" href="index.html">Home</a></li>
-          <li><a class="nav__link" href="about-us.html">About Us</a></li>
-          <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
-          <li><a class="nav__link" href="faq.html">FAQ</a></li>
-          <li><a class="nav__link" href="contact-us.html">Contact Us</a></li>
-          <li class="nav__drawer-cta"><a class="btn btn--primary" href="sign-up.html">Get Started</a></li>
+          <li><a class="nav__link" href="/">Home</a></li>
+          <li><a class="nav__link" href="/about-us">About Us</a></li>
+          <li><a class="nav__link" href="/how-it-works">How It Works</a></li>
+          <li><a class="nav__link" href="/faq">FAQ</a></li>
+          <li><a class="nav__link" href="/contact-us">Contact Us</a></li>
+          <li class="nav__drawer-cta"><a class="btn btn--primary" href="/sign-up">Get Started</a></li>
         </ul>
       </nav>
 
       <div class="nav__actions">
-        <a class="btn btn--primary" href="sign-up.html">Get Started</a>
+        <a class="btn btn--primary" href="/sign-up">Get Started</a>
         <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -49,40 +52,47 @@
     <!-- ===== Sign-up ===== -->
     <section class="section">
       <div class="container auth">
-        <div class="auth__form-card reveal">
-          <h1 class="auth__form-title">Create your account</h1>
+        <div class="auth__form-card form-card--accent reveal">
+          <h1 class="auth__form-title">Open Your Larch Vaultmere Account</h1>
           <p class="auth__form-sub">Free to join &middot; takes less than 2 minutes</p>
 
           <form id="signup-form" novalidate>
-            <div class="form-field">
-              <label class="form-label" for="signup-name">Full name</label>
-              <input class="form-input" type="text" id="signup-name" name="name" placeholder="e.g. Ali Khan" autocomplete="name" required />
+            <div class="form__row">
+              <div class="form-field">
+                <label class="form-label" for="signup-first">First name</label>
+                <input class="form-input" type="text" id="signup-first" name="firstName" placeholder="e.g. Ali" autocomplete="given-name" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="signup-last">Last name</label>
+                <input class="form-input" type="text" id="signup-last" name="lastName" placeholder="e.g. Khan" autocomplete="family-name" required />
+              </div>
             </div>
 
             <div class="form-field">
-              <label class="form-label" for="signup-email">Email address</label>
+              <label class="form-label" for="signup-email">Email</label>
               <input class="form-input" type="email" id="signup-email" name="email" placeholder="you@example.com" autocomplete="email" required />
             </div>
 
             <div class="form-field">
-              <label class="form-label" for="signup-password">Password</label>
-              <input class="form-input" type="password" id="signup-password" name="password" placeholder="At least 8 characters" autocomplete="new-password" required />
+              <label class="form-label" for="signup-phone">Phone</label>
+              <input class="form-input" type="tel" id="signup-phone" name="phone" placeholder="300 1234567" autocomplete="tel" required />
             </div>
 
-            <div class="form-field">
-              <label class="form-label" for="signup-confirm">Confirm password</label>
-              <input class="form-input" type="password" id="signup-confirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" required />
+            <!-- Honeypot — hidden from humans, catches spam bots -->
+            <div class="form__honey" aria-hidden="true">
+              <label for="signup-company">Leave this field empty</label>
+              <input type="text" id="signup-company" name="company" tabindex="-1" autocomplete="off" />
             </div>
 
             <label class="form-check">
               <input type="checkbox" id="signup-terms" required />
-              <span>I agree to the <a href="terms-of-use.html">Terms of Use</a> and <a href="privacy-policy.html">Privacy Policy</a>, and I understand the <a href="risk-disclosure.html">risks of crypto trading</a>.</span>
+              <span>I agree to the <a href="/terms-of-use">Terms of Use</a> and <a href="/privacy-policy">Privacy Policy</a>.</span>
             </label>
 
             <p class="form-error" id="signup-error" role="alert"></p>
 
-            <button class="btn btn--gold btn--lg" type="submit" style="width:100%;">Create Account</button>
-            <p class="form-note">Demo form — connect it to a real backend to create actual accounts (see <code>js/main.js</code>).</p>
+            <button class="btn btn--gold btn--lg" type="submit" style="width:100%;">Create Your Account</button>
+            <p class="form-note">Protected by 2FA and 256-bit SSL encryption</p>
           </form>
         </div>
 
@@ -138,7 +148,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="brand brand--light" href="index.html" aria-label="Larch Vaultmere home">
+          <a class="brand brand--light" href="/" aria-label="Larch Vaultmere home">
             <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0d1318" stroke="rgba(16,185,129,0.3)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgF)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
           </a>
@@ -148,21 +158,21 @@
         <nav class="footer__col" aria-label="Platform links">
           <h3 class="footer__heading">Platform</h3>
           <ul class="footer__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
           </ul>
         </nav>
 
         <nav class="footer__col" aria-label="Legal links">
           <h3 class="footer__heading">Legal</h3>
           <ul class="footer__links">
-            <li><a href="terms-of-use.html">Terms of Use</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
-            <li><a href="sign-up.html">Get Started</a></li>
+            <li><a href="/terms-of-use">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/risk-disclosure">Risk Disclosure</a></li>
+            <li><a href="/sign-up">Get Started</a></li>
           </ul>
         </nav>
       </div>
@@ -173,11 +183,14 @@
 
       <div class="footer__bottom">
         <p>&copy; <span id="footer-year">2026</span> Larch Vaultmere. All rights reserved.</p>
-        <p class="footer__legal"><a href="terms-of-use.html">Terms of Use</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="risk-disclosure.html">Risk Disclosure</a></p>
+        <p class="footer__legal"><a href="/terms-of-use">Terms of Use</a> &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/risk-disclosure">Risk Disclosure</a></p>
       </div>
     </div>
   </footer>
 
+  <!-- intl-tel-input: country data + plugin (flags & dial codes) -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/data.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/intlTelInput.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

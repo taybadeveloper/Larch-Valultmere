@@ -40,9 +40,15 @@ larch-vaultmere/
 └── README.md
 ```
 
-## How to run
+## How to run locally
 
-Open `index.html` in any browser (double-click it). All pages link to each other — no server needed.
+Links use clean URLs (`/about-us`, `/sign-up` …), so the site needs a local server:
+
+```
+powershell -ExecutionPolicy Bypass -File serve.ps1
+```
+
+This starts a dev server at **http://localhost:8000** that mimics Vercel's clean-URL behavior (it also opens the site in your browser). Stop it with Ctrl+C.
 
 > Note: Google Fonts and the CoinGecko API need internet. Offline, the page still works — fonts fall back to system fonts and live data sections show "retrying".
 
@@ -81,9 +87,10 @@ This template deliberately has **no fake reviews**. Once you have real users, ad
 
 ## Deploying
 
-- **cPanel / shared hosting**: upload all files/folders as-is to `public_html`.
-- **Netlify / Vercel**: drag-and-drop the project folder — nothing to build.
-- **GitHub Pages**: push the folder to a repo and enable Pages.
+- **Vercel** (current setup): `vercel.json` enables `cleanUrls`, so pages serve as `/`, `/about-us`, `/contact-us`, `/faq`, `/how-it-works`, `/sign-up`, `/terms-of-use`, `/privacy-policy`, `/risk-disclosure` and `/thank-you`. Old `.html` URLs redirect (308) to the clean URLs automatically. Just push to the connected GitHub repo — Vercel deploys on push.
+- **Netlify**: drag-and-drop the project folder — nothing to build (enable "Pretty URLs" in site settings for the clean links).
+- **cPanel / shared hosting**: upload all files/folders as-is to `public_html` (clean URLs need `.htaccess` rules — ask for them).
+- **GitHub Pages**: push the folder to a repo and enable Pages (note: Pages does not do clean URLs for `.html` files; the root-relative links would need a custom 404 trick).
 
 ## Important
 

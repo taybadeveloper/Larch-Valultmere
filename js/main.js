@@ -433,8 +433,26 @@ const revealObserver = new IntersectionObserver(
 $$(".reveal").forEach((el) => revealObserver.observe(el));
 
 /* ==========================================================================
+   Phone inputs — intl-tel-input (flags + dial codes, loaded via CDN)
+   Falls back to plain inputs if the CDN scripts didn't load.
+   ========================================================================== */
+const phoneInstances = {};
+
+if (window.intlTelInput) {
+  ["home-phone", "contact-phone", "signup-phone"].forEach((id) => {
+    const input = document.getElementById(id);
+    if (!input) return;
+    phoneInstances[id] = window.intlTelInput(input, {
+      initialCountry: "us",
+      preferredCountries: ["us", "gb", "au", "pk", "ae", "sa"],
+      autoPlaceholder: "aggressive",
+    });
+  });
+}
+
+/* ==========================================================================
    Sign-up form (sign-up.html) — client-side demo
-   Validates, then redirects to thank-you.html?name=Firstname
+   Validates, then redirects to /thank-you?name=Firstname
    Connect it to a real backend to create actual accounts.
    ========================================================================== */
 const signupForm = $("#signup-form");
@@ -442,30 +460,43 @@ const signupForm = $("#signup-form");
 if (signupForm) {
   signupForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = $("#signup-name").value.trim();
+
+    // Honeypot: if the hidden field was filled, it's a bot — pretend success
+    const honeypot = $("#signup-company");
+    if (honeypot && honeypot.value) {
+      signupForm.reset();
+      phoneInstances["signup-phone"]?.setNumber("");
+      return;
+    }
+
+    const first = $("#signup-first").value.trim();
+    const last = $("#signup-last").value.trim();
     const email = $("#signup-email").value.trim();
-    const password = $("#signup-password").value;
-    const confirm = $("#signup-confirm").value;
-    const agreed = $("#signup-terms").checked;
+    const phoneIti = phoneInstances["signup-phone"];
+    const phoneValue = phoneIti ? phoneIti.getNumber() || $("#signup-phone").value : $("#signup-phone").value;
+    const phoneDigits = phoneValue.replace(/\D/g, "");
+    const consented = $("#signup-terms").checked;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const errorEl = $("#signup-error");
 
-    let message = "";
-    if (!name) message = "Please enter your full name.";
-    else if (!emailOk) message = "Please enter a valid email address.";
-    else if (password.length < 8) message = "Password must be at least 8 characters.";
-    else if (password !== confirm) message = "Passwords do not match.";
-    else if (!agreed) message = "Please accept the Terms of Use to continue.";
+    let err = "";
+    if (!first) err = "First name is required";
+    else if (!last) err = "Last name is required";
+    else if (!emailOk) err = "Enter a valid email address";
+    else if (phoneDigits.length < 7) err = "Enter a valid phone number";
+    else if (!consented) err = "Please accept the Terms of Use to continue.";
 
-    if (message) {
-      errorEl.textContent = message;
+    if (err) {
+      errorEl.textContent = err;
       errorEl.classList.add("show");
       return;
     }
 
+    errorEl.classList.remove("show");
+
     // Demo flow: send the visitor to the thank-you page with their first name.
     // TODO: replace with a real API call that creates the account.
-    window.location.href = `thank-you.html?name=${encodeURIComponent(name.split(" ")[0])}`;
+    window.location.href = `/thank-you?name=${encodeURIComponent(first)}`;
   });
 }
 
@@ -494,13 +525,16 @@ if (contactForm) {
     const honeypot = $("#contact-company");
     if (honeypot && honeypot.value) {
       contactForm.reset();
+      phoneInstances["contact-phone"]?.setNumber("");
       return;
     }
 
     const first = $("#contact-first").value.trim();
     const last = $("#contact-last").value.trim();
     const email = $("#contact-email").value.trim();
-    const phoneDigits = $("#contact-phone").value.replace(/\D/g, "");
+    const phoneIti = phoneInstances["contact-phone"];
+    const phoneValue = phoneIti ? phoneIti.getNumber() || $("#contact-phone").value : $("#contact-phone").value;
+    const phoneDigits = phoneValue.replace(/\D/g, "");
     const consented = $("#contact-consent").checked;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const errorEl = $("#contact-error");
@@ -534,7 +568,57 @@ if (contactForm) {
       successEl.textContent = `Thanks ${first} — your message has been received! (Demo: connect a backend to actually send it.)`;
       successEl.classList.add("show");
       contactForm.reset();
+      phoneInstances["contact-phone"]?.setNumber("");
     }, 600);
+  });
+}
+
+/* ==========================================================================
+   Home page sign-up form (index.html) — mirrors the reference design
+   Validates, then sends the visitor to /thank-you with their first name.
+   ========================================================================== */
+const homeSignupForm = $("#home-signup-form");
+
+if (homeSignupForm) {
+  homeSignupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Honeypot: if the hidden field was filled, it's a bot — pretend success
+    const honeypot = $("#home-company");
+    if (honeypot && honeypot.value) {
+      homeSignupForm.reset();
+      phoneInstances["home-phone"]?.setNumber("");
+      return;
+    }
+
+    const first = $("#home-first").value.trim();
+    const last = $("#home-last").value.trim();
+    const email = $("#home-email").value.trim();
+    const phoneIti = phoneInstances["home-phone"];
+    const phoneValue = phoneIti ? phoneIti.getNumber() || $("#home-phone").value : $("#home-phone").value;
+    const phoneDigits = phoneValue.replace(/\D/g, "");
+    const consented = $("#home-consent").checked;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const errorEl = $("#home-signup-error");
+
+    let err = "";
+    if (!first) err = "First name is required";
+    else if (!last) err = "Last name is required";
+    else if (!emailOk) err = "Enter a valid email address";
+    else if (phoneDigits.length < 7) err = "Enter a valid phone number";
+    else if (!consented) err = "Please accept the Terms of Use to continue.";
+
+    if (err) {
+      errorEl.textContent = err;
+      errorEl.classList.add("show");
+      return;
+    }
+
+    errorEl.classList.remove("show");
+
+    // Demo flow: send the visitor to the thank-you page with their first name.
+    // TODO: replace with a real API call that creates the account.
+    window.location.href = `/thank-you?name=${encodeURIComponent(first)}`;
   });
 }
 

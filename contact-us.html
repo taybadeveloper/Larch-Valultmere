@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- intl-tel-input: country flags + dial codes for phone fields -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/css/intlTelInput.min.css" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body id="top">
@@ -19,24 +22,24 @@
   <!-- ===== Header ===== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Larch Vaultmere home">
+      <a class="brand" href="/" aria-label="Larch Vaultmere home">
         <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#10161e" stroke="rgba(16,185,129,0.35)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgH)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
       </a>
 
       <nav class="nav" aria-label="Main navigation">
         <ul class="nav__links" id="nav-links">
-          <li><a class="nav__link" href="index.html">Home</a></li>
-          <li><a class="nav__link" href="about-us.html">About Us</a></li>
-          <li><a class="nav__link" href="how-it-works.html">How It Works</a></li>
-          <li><a class="nav__link" href="faq.html">FAQ</a></li>
-          <li><a class="nav__link active" href="contact-us.html" aria-current="page">Contact Us</a></li>
-          <li class="nav__drawer-cta"><a class="btn btn--primary" href="sign-up.html">Get Started</a></li>
+          <li><a class="nav__link" href="/">Home</a></li>
+          <li><a class="nav__link" href="/about-us">About Us</a></li>
+          <li><a class="nav__link" href="/how-it-works">How It Works</a></li>
+          <li><a class="nav__link" href="/faq">FAQ</a></li>
+          <li><a class="nav__link active" href="/contact-us" aria-current="page">Contact Us</a></li>
+          <li class="nav__drawer-cta"><a class="btn btn--primary" href="/sign-up">Get Started</a></li>
         </ul>
       </nav>
 
       <div class="nav__actions">
-        <a class="btn btn--primary" href="sign-up.html">Get Started</a>
+        <a class="btn btn--primary" href="/sign-up">Get Started</a>
         <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
           <span></span><span></span><span></span>
         </button>
@@ -58,7 +61,7 @@
     <!-- ===== Contact ===== -->
     <section class="section">
       <div class="container contact-grid">
-        <div class="auth__form-card reveal">
+        <div class="auth__form-card form-card--accent reveal">
           <h2 class="auth__form-title">Email Us Anytime</h2>
           <p class="auth__form-sub">Fill in the form and we&rsquo;ll get back to you within a few hours.</p>
 
@@ -81,27 +84,7 @@
 
             <div class="form-field">
               <label class="form-label" for="contact-phone">Phone</label>
-              <div class="form__phone">
-                <select class="form-input form__ccode" id="contact-ccode" aria-label="Country code">
-                  <option value="+1">US +1</option>
-                  <option value="+44">UK +44</option>
-                  <option value="+61">AU +61</option>
-                  <option value="+92">PK +92</option>
-                  <option value="+971">AE +971</option>
-                  <option value="+966">SA +966</option>
-                  <option value="+91">IN +91</option>
-                  <option value="+49">DE +49</option>
-                  <option value="+33">FR +33</option>
-                  <option value="+39">IT +39</option>
-                  <option value="+34">ES +34</option>
-                  <option value="+65">SG +65</option>
-                  <option value="+86">CN +86</option>
-                  <option value="+81">JP +81</option>
-                  <option value="+27">ZA +27</option>
-                  <option value="+7">RU +7</option>
-                </select>
-                <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="300 1234567" autocomplete="tel" required />
-              </div>
+              <input class="form-input" type="tel" id="contact-phone" name="phone" placeholder="300 1234567" autocomplete="tel" required />
             </div>
 
             <!-- Honeypot — hidden from humans, catches spam bots -->
@@ -112,7 +95,7 @@
 
             <label class="form-check">
               <input type="checkbox" id="contact-consent" required />
-              <span>I agree to the <a href="privacy-policy.html">Privacy Policy</a> and consent to being contacted about my enquiry.</span>
+              <span>I agree to the <a href="/privacy-policy">Privacy Policy</a> and consent to being contacted about my enquiry.</span>
             </label>
 
             <p class="form-error" id="contact-error" role="alert"></p>
@@ -160,7 +143,7 @@
                 </span>
                 <div>
                   <h3>Quick answers</h3>
-                  <p>Check the <a href="faq.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">FAQ page</a> — most questions are answered there instantly.</p>
+                  <p>Check the <a href="/faq" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px;">FAQ page</a> — most questions are answered there instantly.</p>
                 </div>
               </li>
             </ul>
@@ -175,7 +158,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="brand brand--light" href="index.html" aria-label="Larch Vaultmere home">
+          <a class="brand brand--light" href="/" aria-label="Larch Vaultmere home">
             <svg class="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6ee7b7"/><stop offset="55%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0d1318" stroke="rgba(16,185,129,0.3)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgF)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span class="brand__name">Larch<span class="brand__accent">Vaultmere</span></span>
           </a>
@@ -185,21 +168,21 @@
         <nav class="footer__col" aria-label="Platform links">
           <h3 class="footer__heading">Platform</h3>
           <ul class="footer__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
           </ul>
         </nav>
 
         <nav class="footer__col" aria-label="Legal links">
           <h3 class="footer__heading">Legal</h3>
           <ul class="footer__links">
-            <li><a href="terms-of-use.html">Terms of Use</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="risk-disclosure.html">Risk Disclosure</a></li>
-            <li><a href="sign-up.html">Get Started</a></li>
+            <li><a href="/terms-of-use">Terms of Use</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/risk-disclosure">Risk Disclosure</a></li>
+            <li><a href="/sign-up">Get Started</a></li>
           </ul>
         </nav>
       </div>
@@ -210,11 +193,14 @@
 
       <div class="footer__bottom">
         <p>&copy; <span id="footer-year">2026</span> Larch Vaultmere. All rights reserved.</p>
-        <p class="footer__legal"><a href="terms-of-use.html">Terms of Use</a> &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="risk-disclosure.html">Risk Disclosure</a></p>
+        <p class="footer__legal"><a href="/terms-of-use">Terms of Use</a> &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/risk-disclosure">Risk Disclosure</a></p>
       </div>
     </div>
   </footer>
 
+  <!-- intl-tel-input: country data + plugin (flags & dial codes) -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/data.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/intlTelInput.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
