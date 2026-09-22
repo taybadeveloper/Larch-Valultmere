@@ -108,8 +108,10 @@ export default function FaqPage() {
             <p className="section-label">Get Started</p>
             <h2 className="cta-panel__title">Still have questions? We&rsquo;re here to help</h2>
             <p className="cta-panel__text">Our support team answers around the clock — or create your free account and see the platform for yourself.</p>
-            <a className="btn btn--gold btn--lg" href="/sign-up">Create Free Account</a>
-            <a className="btn btn--ghost btn--lg" href="/contact-us">Contact Support</a>
+            <div className="cta-panel__actions">
+              <a className="btn btn--gold btn--lg" href="/sign-up">Create Free Account</a>
+              <a className="btn btn--ghost btn--lg" href="/contact-us">Contact Support</a>
+            </div>
             <p className="cta-panel__fine">No credit card required &middot; Withdraw anytime &middot; 2FA secured</p>
           </div>
         </div>
