@@ -438,12 +438,27 @@ $$(".reveal").forEach((el) => revealObserver.observe(el));
    ========================================================================== */
 const phoneInstances = {};
 
+/* Maps the visitor's browser language to a country code (fallback for geoIP) */
+function countryFromLanguage() {
+  const lang = (navigator.language || "en-US").split("-").pop().toLowerCase();
+  return /^[a-z]{2}$/.test(lang) ? lang : "us";
+}
+
 if (window.intlTelInput) {
   ["home-phone", "contact-phone", "signup-phone"].forEach((id) => {
     const input = document.getElementById(id);
     if (!input) return;
     phoneInstances[id] = window.intlTelInput(input, {
-      initialCountry: "us",
+      // Detect the visitor's country from their IP (v29: returns a Promise)
+      initialCountryLookup: () =>
+        fetch("https://ipwho.is/")
+          .then((res) => res.json())
+          .then((data) =>
+            data && data.success && data.country_code
+              ? data.country_code.toLowerCase()
+              : countryFromLanguage()
+          )
+          .catch(() => countryFromLanguage()),
       preferredCountries: ["us", "gb", "au", "pk", "ae", "sa"],
       autoPlaceholder: "aggressive",
     });
@@ -475,7 +490,6 @@ if (signupForm) {
     const phoneIti = phoneInstances["signup-phone"];
     const phoneValue = phoneIti ? phoneIti.getNumber() || $("#signup-phone").value : $("#signup-phone").value;
     const phoneDigits = phoneValue.replace(/\D/g, "");
-    const consented = $("#signup-terms").checked;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const errorEl = $("#signup-error");
 
@@ -484,7 +498,6 @@ if (signupForm) {
     else if (!last) err = "Last name is required";
     else if (!emailOk) err = "Enter a valid email address";
     else if (phoneDigits.length < 7) err = "Enter a valid phone number";
-    else if (!consented) err = "Please accept the Terms of Use to continue.";
 
     if (err) {
       errorEl.textContent = err;
@@ -513,7 +526,7 @@ if (thankyouName) {
 
 /* ==========================================================================
    Contact form (contact-us.html) — client-side demo
-   Fields mirror the reference design: first/last name, email, phone, consent.
+   Fields mirror the reference design: first/last name, email, phone.
    ========================================================================== */
 const contactForm = $("#contact-form");
 
@@ -535,7 +548,6 @@ if (contactForm) {
     const phoneIti = phoneInstances["contact-phone"];
     const phoneValue = phoneIti ? phoneIti.getNumber() || $("#contact-phone").value : $("#contact-phone").value;
     const phoneDigits = phoneValue.replace(/\D/g, "");
-    const consented = $("#contact-consent").checked;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const errorEl = $("#contact-error");
     const successEl = $("#contact-success");
@@ -546,7 +558,6 @@ if (contactForm) {
     else if (!last) err = "Last name is required";
     else if (!emailOk) err = "Enter a valid email address";
     else if (phoneDigits.length < 7) err = "Enter a valid phone number";
-    else if (!consented) err = "Please accept the Privacy Policy to continue.";
 
     if (err) {
       errorEl.textContent = err;
@@ -597,7 +608,6 @@ if (homeSignupForm) {
     const phoneIti = phoneInstances["home-phone"];
     const phoneValue = phoneIti ? phoneIti.getNumber() || $("#home-phone").value : $("#home-phone").value;
     const phoneDigits = phoneValue.replace(/\D/g, "");
-    const consented = $("#home-consent").checked;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const errorEl = $("#home-signup-error");
 
@@ -606,7 +616,6 @@ if (homeSignupForm) {
     else if (!last) err = "Last name is required";
     else if (!emailOk) err = "Enter a valid email address";
     else if (phoneDigits.length < 7) err = "Enter a valid phone number";
-    else if (!consented) err = "Please accept the Terms of Use to continue.";
 
     if (err) {
       errorEl.textContent = err;
