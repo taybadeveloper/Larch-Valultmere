@@ -2711,3 +2711,8 @@ select.form-input {
     padding: 32px 0 28px;
   }
 }
+
+/* ---------- Utility: tighter section spacing ---------- */
+.section--tight {
+  padding: 56px 0;
+}

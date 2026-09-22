@@ -16,7 +16,7 @@ export default function ContactUsPage() {
       </PageHero>
 
       {/* ===== Contact ===== */}
-      <section className="section">
+      <section className="section section--tight">
         <div className="container contact-grid">
           <div className="auth__form-card form-card--accent reveal">
             <h2 className="auth__form-title">Email Us Anytime</h2>
