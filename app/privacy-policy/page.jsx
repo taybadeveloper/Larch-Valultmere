@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "How <strong>Larch Vaultmere</strong> collects, uses and protects your personal information.",
+    "How Larch Vaultmere collects, uses and protects your personal information.",
 };
 
 export default function PrivacyPolicyPage() {

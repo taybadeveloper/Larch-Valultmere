@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "Terms of Use",
   description:
-    "The terms and conditions that govern your use of the <strong>Larch Vaultmere</strong> platform.",
+    "The terms and conditions that govern your use of the Larch Vaultmere platform.",
 };
 
 export default function TermsOfUsePage() {

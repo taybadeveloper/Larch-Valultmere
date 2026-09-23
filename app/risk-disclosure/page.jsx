@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "Risk Disclosure",
   description:
-    "An honest explanation of the risks involved in cryptocurrency trading. Please read before using the <strong>Larch Vaultmere</strong> platform.",
+    "An honest explanation of the risks involved in cryptocurrency trading. Please read before using the Larch Vaultmere platform.",
 };
 
 export default function RiskDisclosurePage() {

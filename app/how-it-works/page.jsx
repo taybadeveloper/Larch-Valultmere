@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "How It Works",
   description:
-    "See how <strong>Larch Vaultmere</strong> works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+    "See how Larch Vaultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
 };
 
 export default function HowItWorksPage() {

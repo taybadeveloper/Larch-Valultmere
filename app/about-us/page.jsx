@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about <strong>Larch Vaultmere</strong>, our mission to make crypto trading smarter, safer and more accessible for everyone.",
+    "Learn about Larch Vaultmere, our mission to make crypto trading smarter, safer and more accessible for everyone.",
 };
 
 export default function AboutUsPage() {

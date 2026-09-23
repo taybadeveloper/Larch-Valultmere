@@ -3,7 +3,7 @@ import SignupForm from "@/components/SignupForm";
 export const metadata = {
   title: "Sign Up",
   description:
-    "Create your free <strong>Larch Vaultmere</strong> account in minutes, live market data, AI strategies and bank-grade security.",
+    "Create your free Larch Vaultmere account in minutes, live market data, AI strategies and bank-grade security.",
 };
 
 export default function SignUpPage() {

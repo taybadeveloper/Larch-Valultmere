@@ -3,7 +3,7 @@ import ThankYouName from "@/components/ThankYouName";
 export const metadata = {
   title: "Thank You",
   description:
-    "Your <strong>Larch Vaultmere</strong> sign-up was received. Here's what happens next.",
+    "Your Larch Vaultmere sign-up was received. Here's what happens next.",
 };
 
 export default function ThankYouPage() {
