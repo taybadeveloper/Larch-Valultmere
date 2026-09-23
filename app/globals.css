@@ -1876,7 +1876,8 @@ div[id] {
    ========================================================================== */
 
 /* ---------- Tablet ---------- */
-@media (max-width: 1024px) {
+/* ---------- Tablet (incl. iPad Pro 13" at 1032px) ---------- */
+@media (max-width: 1100px) {
   .hero__grid {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1921,6 +1922,10 @@ div[id] {
 
   .stat:nth-child(2) {
     border-left: 1px solid var(--line-soft);
+  }
+
+  .markets__source {
+    text-align: center;
   }
 }
 
@@ -2005,7 +2010,7 @@ div[id] {
   }
 
   .markets__source {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -2703,7 +2708,7 @@ select.form-input {
 }
 
 /* ---------- Responsive for the added pages ---------- */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .auth {
     grid-template-columns: 1fr;
     gap: 44px;
