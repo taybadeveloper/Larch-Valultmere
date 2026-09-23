@@ -130,7 +130,7 @@ div[id] {
 }
 
 .section {
-  padding: 92px 0;
+  padding: clamp(52px, 7vw, 92px) 0;
 }
 
 .section--tint {
@@ -408,7 +408,7 @@ div[id] {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding: 88px 0 72px;
+  padding: clamp(44px, 6vw, 88px) 0 clamp(44px, 6vw, 72px);
   overflow: hidden;
   background:
     radial-gradient(ellipse 60% 50% at 82% 8%, rgba(16, 185, 129, 0.12), transparent 62%),
@@ -1884,8 +1884,6 @@ div[id] {
   }
 
   .hero__visual {
-    max-width: 560px;
-    margin-inline: auto;
     width: 100%;
   }
 
@@ -1908,7 +1906,7 @@ div[id] {
   }
 
   .status-card {
-    max-width: 520px;
+    width: 100%;
   }
 
   .stats__grid {
@@ -1931,10 +1929,6 @@ div[id] {
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-  .section {
-    padding: 68px 0;
-  }
-
   .section__head {
     flex-direction: column;
     align-items: center;
@@ -1945,10 +1939,6 @@ div[id] {
 
   .section__head--center {
     align-items: center;
-  }
-
-  .hero {
-    padding: 56px 0 56px;
   }
 
   .hero__points {
@@ -2715,8 +2705,6 @@ select.form-input {
   }
 
   .auth__form-card {
-    max-width: 560px;
-    margin-inline: auto;
     width: 100%;
   }
 
@@ -2842,5 +2830,12 @@ select.form-input {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* ---------- Small phones (320-430px) ---------- */
+@media (max-width: 430px) {
+  .form__row {
+    grid-template-columns: 1fr;
   }
 }
