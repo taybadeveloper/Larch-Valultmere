@@ -2924,3 +2924,20 @@ select.form-input {
     margin-bottom: 12px;
   }
 }
+
+/* ---------- Features CTA below cards on mobile/tablet ---------- */
+.features__action {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .features__btn {
+    display: none;
+  }
+
+  .features__action {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+  }
+}

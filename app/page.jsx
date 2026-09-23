@@ -213,7 +213,7 @@ export default function HomePage() {
               <p className="section-label">Features</p>
               <h2 className="section__title">Everything a modern trader needs</h2>
             </div>
-            <a className="btn btn--ghost" href="/sign-up">Get Started &rarr;</a>
+            <a className="btn btn--ghost features__btn" href="/sign-up">Get Started &rarr;</a>
           </div>
 
           <div className="bento">
@@ -264,6 +264,11 @@ export default function HomePage() {
               <h3 className="bento__title">Transparent pricing</h3>
               <p className="bento__text">Simple, published fees on every transaction. No hidden charges — ever.</p>
             </article>
+          </div>
+
+          {/* Shown on mobile/tablet only - the same CTA, below the cards */}
+          <div className="features__action">
+            <a className="btn btn--ghost" href="/sign-up">Get Started &rarr;</a>
           </div>
         </div>
       </section>
