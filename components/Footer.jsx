@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__disclaimer">
-          <p><strong>Risk disclaimer:</strong> Cryptocurrency trading involves significant risk and may not be suitable for everyone. Prices can move sharply in either direction, and you may lose some or all of your funds. Past performance does not guarantee future results, and no automated tool can guarantee returns. Nothing on this website is financial advice — always do your own research and only trade money you can afford to lose.</p>
+          <p><strong>Risk disclaimer:</strong> Cryptocurrency trading involves significant risk and may not be suitable for everyone. Prices can move sharply in either direction, and you may lose some or all of your funds. Past performance does not guarantee future results, and no automated tool can guarantee returns. Nothing on this website is financial advice, always do your own research and only trade money you can afford to lose.</p>
         </div>
 
         <div className="footer__bottom">

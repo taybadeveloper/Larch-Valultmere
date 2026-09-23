@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /*
- * Live data (CoinGecko public API) — port of the original js/main.js:
+ * Live data (CoinGecko public API), port of the original js/main.js:
  * scrolling ticker, live markets table and the hero BTC dashboard panel.
  * Renders nothing; fills placeholder elements in the home page markup.
  */
@@ -71,7 +71,7 @@ function formatAxis(value) {
   return value.toFixed(2);
 }
 
-/* Draws the hero dashboard's 7-day BTC chart — real data, grid + axis labels */
+/* Draws the hero dashboard's 7-day BTC chart, real data, grid + axis labels */
 function drawBtcChart(prices) {
   const chartEl = $("#dash-chart");
   if (!chartEl || !prices || prices.length < 2) return;
@@ -136,7 +136,7 @@ function drawBtcChart(prices) {
     </svg>`;
 }
 
-/* Hero BTC panel — big price, 24h change pill, high/low/volume, 7-day chart */
+/* Hero BTC panel, big price, 24h change pill, high/low/volume, 7-day chart */
 function fillBtcPanel(coin) {
   const bigPrice = $("#dash-btc-big");
   const bigChg = $("#dash-btc-big-chg");
@@ -198,7 +198,7 @@ function marketListRowHtml(coin) {
   const up = change >= 0;
   const spark = coin.sparkline_in_7d?.price?.length
     ? sparklineSvg(coin.sparkline_in_7d.price, up ? "sparkline--up" : "sparkline--down", 90, 28)
-    : "&mdash;";
+    : "";
 
   return `
     <div class="mrow">
@@ -220,7 +220,7 @@ function marketCardHtml(coin) {
   const up = change >= 0;
   const spark = coin.sparkline_in_7d?.price?.length
     ? sparklineSvg(coin.sparkline_in_7d.price, up ? "sparkline--up" : "sparkline--down", 220, 58)
-    : "&mdash;";
+    : "";
 
   return `
     <article class="fcard">
@@ -278,7 +278,7 @@ export default function LiveData() {
         fillDashboard(data);
       } catch (err) {
         console.warn("Live prices unavailable, retrying later.", err);
-        ticker.innerHTML = `<p class="ticker__loading">Live prices temporarily unavailable — retrying&hellip;</p>`;
+        ticker.innerHTML = `<p class="ticker__loading">Live prices temporarily unavailable, retrying&hellip;</p>`;
       }
     }
 
@@ -294,12 +294,12 @@ export default function LiveData() {
         const data = await res.json();
         marketsBody.innerHTML = renderMarkets(data);
 
-        // The hero dashboard panel shows Bitcoin — reuse the same API response
+        // The hero dashboard panel shows Bitcoin, reuse the same API response
         const btc = data.find((coin) => coin.id === "bitcoin");
         if (btc) fillBtcPanel(btc);
       } catch (err) {
         console.warn("Market data: live data unavailable, retrying later.", err);
-        marketsBody.innerHTML = `<p class="markets__loading">Live market data temporarily unavailable — retrying&hellip;</p>`;
+        marketsBody.innerHTML = `<p class="markets__loading">Live market data temporarily unavailable, retrying&hellip;</p>`;
       }
     }
 

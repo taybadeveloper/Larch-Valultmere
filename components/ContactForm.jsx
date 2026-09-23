@@ -79,7 +79,7 @@ export default function ContactForm() {
       return;
     }
 
-    setSuccess(`Thanks ${first} — your message has been received! We'll get back to you soon.`);
+    setSuccess(`Thanks ${first}, your message has been received! We'll get back to you soon.`);
     form.reset();
     itiRef.current?.setNumber("");
   };

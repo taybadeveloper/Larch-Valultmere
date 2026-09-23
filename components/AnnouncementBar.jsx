@@ -17,7 +17,7 @@ export default function AnnouncementBar() {
 
   return (
     <div className="announcement" id="announcement" role="region" aria-label="Announcement" hidden={hidden}>
-      <p className="announcement__text">Welcome to the new Larch Vaultmere — live market data is now available for 60+ coins.</p>
+      <p className="announcement__text">Welcome to the new Larch Vaultmere, live market data is now available for 60+ coins.</p>
       <button
         className="announcement__close"
         id="announcement-close"

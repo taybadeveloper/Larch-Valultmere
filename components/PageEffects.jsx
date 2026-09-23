@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 /*
- * Global page effects — ports of the original js/main.js:
+ * Global page effects, ports of the original js/main.js:
  * reveal-on-scroll, count-up stats and the FAQ accordion.
  * Renders nothing; runs observers over the page's DOM exactly like the
  * original script did on every page.
@@ -61,7 +61,7 @@ export default function PageEffects() {
 
     $$(".reveal").forEach((el) => revealObserver.observe(el));
 
-    /* ---------- FAQ accordion — one open at a time ---------- */
+    /* ---------- FAQ accordion, one open at a time ---------- */
     const faqHandlers = [];
     $$(".faq__item").forEach((item) => {
       const question = $(".faq__question", item);

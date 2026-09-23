@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "How It Works",
   description:
-    "See how Larch Vaultmere works — create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+    "See how Larch Vaultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
 };
 
 export default function HowItWorksPage() {
@@ -11,7 +11,7 @@ export default function HowItWorksPage() {
     <>
       {/* ===== Page hero ===== */}
       <PageHero label="How It Works" title="From sign-up to first trade in four steps">
-        <p className="page-hero__sub">No complicated setup, no trading experience required. Here&rsquo;s exactly how Larch Vaultmere works — from creating your account to tracking your first results.</p>
+        <p className="page-hero__sub">No complicated setup, no trading experience required. Here&rsquo;s exactly how Larch Vaultmere works, from creating your account to tracking your first results.</p>
       </PageHero>
 
       {/* ===== Steps ===== */}
@@ -40,7 +40,7 @@ export default function HowItWorksPage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /><path d="M12 7v5l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="step__title">Activate AI strategies</h3>
-              <p className="step__text">Pick a strategy that matches your goals and risk level — or build your own. The engine watches the market and acts on signals 24/7.</p>
+              <p className="step__text">Pick a strategy that matches your goals and risk level, or build your own. The engine watches the market and acts on signals 24/7.</p>
             </li>
             <li className="step reveal">
               <span className="step__num">4</span>
@@ -78,7 +78,7 @@ export default function HowItWorksPage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">AI strategies</h3>
-              <p>Automated strategies that act on market signals around the clock — no emotions, no missed opportunities.</p>
+              <p>Automated strategies that act on market signals around the clock, no emotions, no missed opportunities.</p>
             </article>
 
             <article className="bento__card reveal">
@@ -102,7 +102,7 @@ export default function HowItWorksPage() {
                 <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" /><path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">Fast withdrawals</h3>
-              <p>Request a payout anytime — most withdrawals are processed within 24 hours.</p>
+              <p>Request a payout anytime, most withdrawals are processed within 24 hours.</p>
             </article>
 
             <article className="bento__card reveal">
@@ -110,7 +110,7 @@ export default function HowItWorksPage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">Transparent pricing</h3>
-              <p>Simple, published fees on every transaction. No hidden charges — ever.</p>
+              <p>Simple, published fees on every transaction. No hidden charges, ever.</p>
             </article>
           </div>
         </div>

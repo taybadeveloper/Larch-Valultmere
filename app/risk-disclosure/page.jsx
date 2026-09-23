@@ -39,9 +39,9 @@ export default function RiskDisclosurePage() {
             <section>
               <h2>3. Technology risks</h2>
               <ul>
-                <li><strong>Platform availability</strong> — technical issues, maintenance or outages may delay trades or withdrawals.</li>
-                <li><strong>Cybersecurity</strong> — while we use bank-grade security, no system connected to the internet is completely immune to attack.</li>
-                <li><strong>Network risks</strong> — blockchain network congestion or failures can affect transaction speed and cost.</li>
+                <li><strong>Platform availability</strong>, technical issues, maintenance or outages may delay trades or withdrawals.</li>
+                <li><strong>Cybersecurity</strong>, while we use bank-grade security, no system connected to the internet is completely immune to attack.</li>
+                <li><strong>Network risks</strong>, blockchain network congestion or failures can affect transaction speed and cost.</li>
               </ul>
             </section>
 
@@ -62,7 +62,7 @@ export default function RiskDisclosurePage() {
 
             <section>
               <h2>7. Your responsibility</h2>
-              <p>You are solely responsible for your trading decisions. Only trade with money you can afford to lose, diversify where possible, and never invest based on hype or pressure from anyone — including us.</p>
+              <p>You are solely responsible for your trading decisions. Only trade with money you can afford to lose, diversify where possible, and never invest based on hype or pressure from anyone, including us.</p>
             </section>
 
             <section>

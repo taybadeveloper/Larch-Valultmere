@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about Larch Vaultmere — our mission to make crypto trading smarter, safer and more accessible for everyone.",
+    "Learn about Larch Vaultmere, our mission to make crypto trading smarter, safer and more accessible for everyone.",
 };
 
 export default function AboutUsPage() {
@@ -11,7 +11,7 @@ export default function AboutUsPage() {
     <>
       {/* ===== Page hero ===== */}
       <PageHero label="About Us" title="Built for the modern crypto investor">
-        <p className="page-hero__sub">We believe intelligent tools should be available to everyone — not just Wall Street. That&rsquo;s why we built Larch Vaultmere: real-time data, AI-powered strategies and bank-grade security, in one simple platform.</p>
+        <p className="page-hero__sub">We believe intelligent tools should be available to everyone, not just Wall Street. That&rsquo;s why we built Larch Vaultmere: real-time data, AI-powered strategies and bank-grade security, in one simple platform.</p>
       </PageHero>
 
       {/* ===== Story ===== */}
@@ -20,8 +20,8 @@ export default function AboutUsPage() {
           <div className="security__copy">
             <p className="section-label">Our Story</p>
             <h2 className="section__title">Trading shouldn&rsquo;t be a full-time job</h2>
-            <p className="security__lead">Most people don&rsquo;t have time to watch charts around the clock. We built Larch Vaultmere to change that — combining live market data with automated strategies that work while you sleep, so trading fits around your life instead of taking it over.</p>
-            <p className="security__lead">Whether you&rsquo;re taking your first step into crypto or you&rsquo;ve been trading for years, our platform meets you where you are — with tools that are powerful when you need them and simple when you don&rsquo;t.</p>
+            <p className="security__lead">Most people don&rsquo;t have time to watch charts around the clock. We built Larch Vaultmere to change that, combining live market data with automated strategies that work while you sleep, so trading fits around your life instead of taking it over.</p>
+            <p className="security__lead">Whether you&rsquo;re taking your first step into crypto or you&rsquo;ve been trading for years, our platform meets you where you are, with tools that are powerful when you need them and simple when you don&rsquo;t.</p>
           </div>
           <div className="security__visual reveal">
             <div className="status-card">
@@ -93,7 +93,7 @@ export default function AboutUsPage() {
           </div>
           <div className="stat">
             <span className="stat__num">$0</span>
-            <span className="stat__label">Hidden fees — ever</span>
+            <span className="stat__label">Hidden fees, ever</span>
           </div>
           <div className="stat">
             <span className="stat__num" data-count="99.9" data-suffix="%">99.9%</span>

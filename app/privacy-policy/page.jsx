@@ -30,10 +30,10 @@ export default function PrivacyPolicyPage() {
               <h2>2. Information we collect</h2>
               <p>We collect information you provide directly, including:</p>
               <ul>
-                <li><strong>Account information</strong> — your name, email address and password when you register.</li>
-                <li><strong>Verification information</strong> — documents required to verify your identity where the law requires it.</li>
-                <li><strong>Transaction information</strong> — records of deposits, withdrawals and trades made through the platform.</li>
-                <li><strong>Communications</strong> — messages you send to our support team.</li>
+                <li><strong>Account information</strong>, your name, email address and password when you register.</li>
+                <li><strong>Verification information</strong>, documents required to verify your identity where the law requires it.</li>
+                <li><strong>Transaction information</strong>, records of deposits, withdrawals and trades made through the platform.</li>
+                <li><strong>Communications</strong>, messages you send to our support team.</li>
               </ul>
               <p>We also collect limited technical data automatically, such as browser type, device type and pages visited, to keep the platform secure and working properly.</p>
             </section>
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
                 <li>To protect against fraud and keep the platform secure.</li>
                 <li>To respond to your questions and support requests.</li>
                 <li>To meet our legal and regulatory obligations.</li>
-                <li>To improve the platform — but never by selling your data.</li>
+                <li>To improve the platform, but never by selling your data.</li>
               </ul>
             </section>
 
@@ -59,9 +59,9 @@ export default function PrivacyPolicyPage() {
               <h2>5. Sharing your information</h2>
               <p>We do not sell your personal information. We share it only in these limited cases:</p>
               <ul>
-                <li><strong>Service providers</strong> — companies that help us run the platform (payment processors, hosting), bound by contract to protect your data.</li>
-                <li><strong>Legal requirements</strong> — where we must comply with the law, regulators or valid legal process.</li>
-                <li><strong>Business transfers</strong> — in connection with a merger or acquisition, with notice to you.</li>
+                <li><strong>Service providers</strong>, companies that help us run the platform (payment processors, hosting), bound by contract to protect your data.</li>
+                <li><strong>Legal requirements</strong>, where we must comply with the law, regulators or valid legal process.</li>
+                <li><strong>Business transfers</strong>, in connection with a merger or acquisition, with notice to you.</li>
               </ul>
             </section>
 

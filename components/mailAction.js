@@ -31,12 +31,12 @@ export async function submitLead({ firstName, lastName, email, phone }) {
       ok: false,
       message:
         (data && data.message) ||
-        "Something went wrong on the server — please try again.",
+        "Something went wrong on the server, please try again.",
     };
   } catch {
     return {
       ok: false,
-      message: "Network error — please check your connection and try again.",
+      message: "Network error, please check your connection and try again.",
     };
   }
 }

@@ -7,11 +7,11 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    default: "Larch Vaultmere — Intelligent Crypto Trading Platform",
-    template: "%s — Larch Vaultmere",
+    default: "Larch Vaultmere | Intelligent Crypto Trading Platform",
+    template: "%s | Larch Vaultmere",
   },
   description:
-    "Larch Vaultmere combines real-time market data with advanced AI strategies to help you trade crypto with confidence — live prices, automated strategies, and bank-grade security.",
+    "Larch Vaultmere combines real-time market data with advanced AI strategies to help you trade crypto with confidence, live prices, automated strategies, and bank-grade security.",
 };
 
 export default function RootLayout({ children }) {

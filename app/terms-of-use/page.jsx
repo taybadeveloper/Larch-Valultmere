@@ -55,7 +55,7 @@ export default function TermsOfUsePage() {
 
             <section>
               <h2>6. Intellectual property</h2>
-              <p>All content on this website — including text, graphics, logos, and software — is the property of Larch Vaultmere or its licensors and is protected by intellectual property laws. You may not copy, modify or redistribute it without written permission.</p>
+              <p>All content on this website, including text, graphics, logos, and software, is the property of Larch Vaultmere or its licensors and is protected by intellectual property laws. You may not copy, modify or redistribute it without written permission.</p>
             </section>
 
             <section>

@@ -20,7 +20,7 @@ export default function HomePage() {
             <h1 className="hero__title">Trade smarter.<br />Invest with <em>confidence</em>.</h1>
             <p className="hero__sub">
               Larch Vaultmere combines real-time market data with advanced AI strategies to help you
-              spot opportunities and manage risk — whether you&rsquo;re a beginner or a seasoned trader.
+              spot opportunities and manage risk, whether you&rsquo;re a beginner or a seasoned trader.
             </p>
 
             <div className="hero__cta">
@@ -40,23 +40,23 @@ export default function HomePage() {
             <div className="dash">
               <div className="dash__bar">
                 <span className="dash__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span className="dash__title">Larch Vaultmere — Live Markets</span>
+                <span className="dash__title">Larch Vaultmere, Live Markets</span>
                 <span className="dash__live"><i aria-hidden="true"></i> LIVE</span>
               </div>
               <div className="dash__body">
                 <div className="dash__market">
                   <div className="dash__market-head">
                     <span className="dash__market-name">Bitcoin <small>BTC/USD</small></span>
-                    <span className="dash__market-price" id="dash-btc-big">&mdash;</span>
-                    <span className="dash__market-chg" id="dash-btc-big-chg">&mdash;</span>
+                    <span className="dash__market-price" id="dash-btc-big"></span>
+                    <span className="dash__market-chg" id="dash-btc-big-chg"></span>
                   </div>
                   <div className="dash__chart" id="dash-chart">
                     <p className="ticker__loading">Loading 7-day chart&hellip;</p>
                   </div>
                   <ul className="dash__stats">
-                    <li><span>24h High</span><strong id="dash-btc-high">&mdash;</strong></li>
-                    <li><span>24h Low</span><strong id="dash-btc-low">&mdash;</strong></li>
-                    <li><span>24h Volume</span><strong id="dash-btc-vol">&mdash;</strong></li>
+                    <li><span>24h High</span><strong id="dash-btc-high"></strong></li>
+                    <li><span>24h Low</span><strong id="dash-btc-low"></strong></li>
+                    <li><span>24h Volume</span><strong id="dash-btc-vol"></strong></li>
                   </ul>
                 </div>
 
@@ -64,23 +64,23 @@ export default function HomePage() {
                   <li className="dash__coin" data-coin="bitcoin">
                     <i className="coin-dot coin-dot--btc" aria-hidden="true"></i>
                     <span className="dash__coin-sym">BTC</span>
-                    <span className="dash__coin-price" id="dash-btc-price">&mdash;</span>
-                    <span className="dash__coin-chg" id="dash-btc-chg">&mdash;</span>
+                    <span className="dash__coin-price" id="dash-btc-price"></span>
+                    <span className="dash__coin-chg" id="dash-btc-chg"></span>
                   </li>
                   <li className="dash__coin" data-coin="ethereum">
                     <i className="coin-dot coin-dot--eth" aria-hidden="true"></i>
                     <span className="dash__coin-sym">ETH</span>
-                    <span className="dash__coin-price" id="dash-eth-price">&mdash;</span>
-                    <span className="dash__coin-chg" id="dash-eth-chg">&mdash;</span>
+                    <span className="dash__coin-price" id="dash-eth-price"></span>
+                    <span className="dash__coin-chg" id="dash-eth-chg"></span>
                   </li>
                   <li className="dash__coin" data-coin="solana">
                     <i className="coin-dot coin-dot--sol" aria-hidden="true"></i>
                     <span className="dash__coin-sym">SOL</span>
-                    <span className="dash__coin-price" id="dash-sol-price">&mdash;</span>
-                    <span className="dash__coin-chg" id="dash-sol-chg">&mdash;</span>
+                    <span className="dash__coin-price" id="dash-sol-price"></span>
+                    <span className="dash__coin-chg" id="dash-sol-chg"></span>
                   </li>
                 </ul>
-                <p className="dash__foot">Prices &amp; chart are live &mdash; refreshed every 60 seconds</p>
+                <p className="dash__foot">Prices &amp; chart are live, refreshed every 60 seconds</p>
               </div>
             </div>
 
@@ -131,7 +131,7 @@ export default function HomePage() {
           </div>
           <div className="stat">
             <span className="stat__num">$0</span>
-            <span className="stat__label">Hidden fees — ever</span>
+            <span className="stat__label">Hidden fees, ever</span>
           </div>
           <div className="stat">
             <span className="stat__num" data-count="99.9" data-suffix="%">99.9%</span>
@@ -148,7 +148,7 @@ export default function HomePage() {
               <p className="section-label">Live Markets</p>
               <h2 className="section__title">Track prices across 60+ cryptocurrencies</h2>
             </div>
-            <p className="section__aside">Real market data from the CoinGecko public API — updated every 60 seconds.</p>
+            <p className="section__aside">Real market data from the CoinGecko public API, updated every 60 seconds.</p>
           </div>
 
           <div className="markets" id="markets-body" aria-label="Live cryptocurrency prices">
@@ -191,7 +191,7 @@ export default function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 1010 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /><path d="M12 7v5l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="step__title">Activate AI strategies</h3>
-              <p className="step__text">Choose a strategy that matches your goals and risk level — the engine handles the rest.</p>
+              <p className="step__text">Choose a strategy that matches your goals and risk level, the engine handles the rest.</p>
             </li>
             <li className="step reveal">
               <span className="step__num">4</span>
@@ -279,7 +279,7 @@ export default function HomePage() {
           <div className="security__copy">
             <p className="section-label">Security First</p>
             <h2 className="section__title">Your security is our top priority</h2>
-            <p className="security__lead">We protect your account at every layer — from login to storage — using the same standards trusted by leading financial institutions.</p>
+            <p className="security__lead">We protect your account at every layer, from login to storage, using the same standards trusted by leading financial institutions.</p>
 
             <ul className="security__list">
               <li className="reveal">
@@ -349,7 +349,7 @@ export default function HomePage() {
                 What is Larch Vaultmere?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>Larch Vaultmere is a crypto trading platform that combines real-time market data with AI-powered strategies — helping you make informed decisions without watching charts all day.</p></div>
+              <div className="faq__answer"><p>Larch Vaultmere is a crypto trading platform that combines real-time market data with AI-powered strategies, helping you make informed decisions without watching charts all day.</p></div>
             </div>
 
             <div className="faq__item reveal">
@@ -357,7 +357,7 @@ export default function HomePage() {
                 Is Larch Vaultmere suitable for beginners?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>Yes. The platform is designed for everyone — clear dashboards, guided setup, and strategies you can activate in one click. You can also start small and learn as you go.</p></div>
+              <div className="faq__answer"><p>Yes. The platform is designed for everyone, clear dashboards, guided setup, and strategies you can activate in one click. You can also start small and learn as you go.</p></div>
             </div>
 
             <div className="faq__item reveal">
@@ -373,7 +373,7 @@ export default function HomePage() {
                 How do deposits and withdrawals work?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>Deposit with your preferred payment method and funds appear in your wallet after confirmation. Withdrawals can be requested anytime — most are processed within 24 hours.</p></div>
+              <div className="faq__answer"><p>Deposit with your preferred payment method and funds appear in your wallet after confirmation. Withdrawals can be requested anytime, most are processed within 24 hours.</p></div>
             </div>
 
             <div className="faq__item reveal">
@@ -381,7 +381,7 @@ export default function HomePage() {
                 What fees do you charge?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>Our fees are simple and published — no hidden charges. Every fee is shown on the pricing page and on each transaction before you confirm it.</p></div>
+              <div className="faq__answer"><p>Our fees are simple and published, no hidden charges. Every fee is shown on the pricing page and on each transaction before you confirm it.</p></div>
             </div>
 
             <div className="faq__item reveal">
@@ -397,7 +397,7 @@ export default function HomePage() {
                 Do you guarantee profits?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>No — and you should be wary of any platform that does. Crypto trading involves real risk, and no tool can guarantee returns. Trade only what you can afford to lose.</p></div>
+              <div className="faq__answer"><p>No, and you should be wary of any platform that does. Crypto trading involves real risk, and no tool can guarantee returns. Trade only what you can afford to lose.</p></div>
             </div>
           </div>
         </div>
@@ -409,7 +409,7 @@ export default function HomePage() {
           <div className="reveal">
             <p className="section-label">Get Started</p>
             <h2 className="auth__side-title">Ready to take your trading to the next level?</h2>
-            <p className="auth__side-text">Create your free account in minutes and explore live markets, AI strategies and bank-grade security — no credit card required.</p>
+            <p className="auth__side-text">Create your free account in minutes and explore live markets, AI strategies and bank-grade security, no credit card required.</p>
 
             <ul className="auth__benefits">
               <li className="auth__benefit">

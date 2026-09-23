@@ -17,7 +17,7 @@ export default function ThankYouPage() {
           </div>
 
           <h1 className="thankyou__title">You&rsquo;re on the list<ThankYouName />! 🎉</h1>
-          <p className="thankyou__text">Thanks for joining Larch Vaultmere. Your account request has been received — here&rsquo;s what happens next on your journey to smarter trading.</p>
+          <p className="thankyou__text">Thanks for joining Larch Vaultmere. Your account request has been received, here&rsquo;s what happens next on your journey to smarter trading.</p>
 
           <div className="thankyou__steps">
             <div className="thankyou__step">
@@ -33,7 +33,7 @@ export default function ThankYouPage() {
             <div className="thankyou__step">
               <span className="thankyou__step-num">3</span>
               <h3>Activate AI strategies</h3>
-              <p>Pick a strategy that matches your goals and risk level — the engine handles the rest, 24/7.</p>
+              <p>Pick a strategy that matches your goals and risk level, the engine handles the rest, 24/7.</p>
             </div>
           </div>
 

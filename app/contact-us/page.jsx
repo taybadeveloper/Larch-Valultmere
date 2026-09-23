@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with the Larch Vaultmere team — questions, feedback or support. Our human support team is available 24/7.",
+    "Get in touch with the Larch Vaultmere team, questions, feedback or support. Our human support team is available 24/7.",
 };
 
 export default function ContactUsPage() {
@@ -12,7 +12,7 @@ export default function ContactUsPage() {
     <>
       {/* ===== Page hero ===== */}
       <PageHero label="Contact Us" title="We&rsquo;re here to help">
-        <p className="page-hero__sub">Questions, feedback or need a hand with your account? Send us a message — our human support team is available 24/7.</p>
+        <p className="page-hero__sub">Questions, feedback or need a hand with your account? Send us a message, our human support team is available 24/7.</p>
       </PageHero>
 
       {/* ===== Contact ===== */}
@@ -53,7 +53,7 @@ export default function ContactUsPage() {
                   </span>
                   <div>
                     <h3>Support hours</h3>
-                    <p>Round the clock — real humans, every day of the year.</p>
+                    <p>Round the clock, real humans, every day of the year.</p>
                   </div>
                 </li>
                 <li>
@@ -62,7 +62,7 @@ export default function ContactUsPage() {
                   </span>
                   <div>
                     <h3>Quick answers</h3>
-                    <p>Check the <a href="/faq" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>FAQ page</a> — most questions are answered there instantly.</p>
+                    <p>Check the <a href="/faq" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>FAQ page</a>, most questions are answered there instantly.</p>
                   </div>
                 </li>
               </ul>
