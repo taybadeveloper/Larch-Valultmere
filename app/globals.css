@@ -2839,3 +2839,75 @@ select.form-input {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Tablet (561-1100px): center hero, CTA and security ---------- */
+@media (min-width: 561px) and (max-width: 1100px) {
+  /* Hero */
+  .hero__copy {
+    text-align: center;
+  }
+
+  .hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__cta {
+    justify-content: center;
+  }
+
+  .hero__points {
+    justify-content: center;
+  }
+
+  /* Get Started CTA */
+  .signup-grid .reveal {
+    text-align: center;
+  }
+
+  .auth__side-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .auth__benefit {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .auth__benefit-icon {
+    margin-bottom: 12px;
+  }
+
+  /* Security */
+  .security__copy {
+    text-align: center;
+  }
+
+  .security__copy .section__title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .security__lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .security__list li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .security__list h3,
+  .security__list p {
+    text-align: center;
+  }
+
+  .security__list .security__check {
+    margin-bottom: 12px;
+  }
+}
+
