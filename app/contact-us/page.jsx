@@ -35,7 +35,7 @@ export default function ContactUsPage() {
                   </span>
                   <div>
                     <h3>Email us</h3>
-                    <p><a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a></p>
+                    <p><a href="mailto:hello@larch-vaultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-vaultmere.com</a></p>
                   </div>
                 </li>
                 <li>
