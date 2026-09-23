@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { initPhone } from "./phone";
+import { initPhone, phoneError } from "./phone";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function SignupForm({ prefix = "signup", errorId = "signup-error" }) {
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
   const itiRef = useRef(null);
 
   // intl-tel-input is loaded from a CDN, so it arrives after hydration.
@@ -15,6 +17,10 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
       itiRef.current = instance;
     });
   }, [prefix]);
+
+  const clearFieldError = (field) => {
+    setErrors((prev) => (prev[field] ? { ...prev, [field]: "" } : prev));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,21 +38,25 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
     const last = document.getElementById(`${prefix}-last`).value.trim();
     const email = document.getElementById(`${prefix}-email`).value.trim();
     const phoneInput = document.getElementById(`${prefix}-phone`);
-    const phoneValue = itiRef.current?.getNumber() || phoneInput.value;
-    const phoneDigits = phoneValue.replace(/\D/g, "");
 
-    let message = "";
-    if (!first) message = "First name is required";
-    else if (!last) message = "Last name is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) message = "Enter a valid email address";
-    else if (phoneDigits.length < 7) message = "Enter a valid phone number";
+    const next = {};
+    if (!first) next.first = "First name is required";
+    if (!last) next.last = "Last name is required";
+    if (!email) next.email = "Email is required";
+    else if (!EMAIL_RE.test(email)) next.email = "Enter a valid email address";
+    const phoneMessage = phoneError(itiRef.current, phoneInput);
+    if (phoneMessage) next.phone = phoneMessage;
 
-    if (message) {
-      setError(message);
+    if (Object.keys(next).length) {
+      setErrors(next);
+      // Move focus to the first invalid field.
+      const firstInvalid = ["first", "last", "email", "phone"].find((f) => next[f]);
+      const el = document.getElementById(`${prefix}-${firstInvalid}`);
+      el?.focus();
       return;
     }
 
-    setError("");
+    setErrors({});
 
     // Demo flow: send the visitor to the thank-you page with their first name.
     // TODO: replace with a real API call that creates the account.
@@ -58,22 +68,69 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
       <div className="form__row">
         <div className="form-field">
           <label className="form-label" htmlFor={`${prefix}-first`}>First name</label>
-          <input className="form-input" type="text" id={`${prefix}-first`} name="firstName" placeholder="e.g. Ali" autoComplete="given-name" required />
+          <input
+            className="form-input"
+            type="text"
+            id={`${prefix}-first`}
+            name="firstName"
+            placeholder="e.g. Ali"
+            autoComplete="given-name"
+            required
+            aria-invalid={errors.first ? "true" : undefined}
+            aria-describedby={errors.first ? `${prefix}-first-error` : undefined}
+            onChange={() => clearFieldError("first")}
+          />
+          {errors.first && <span className="field-error" id={`${prefix}-first-error`}>{errors.first}</span>}
         </div>
         <div className="form-field">
           <label className="form-label" htmlFor={`${prefix}-last`}>Last name</label>
-          <input className="form-input" type="text" id={`${prefix}-last`} name="lastName" placeholder="e.g. Khan" autoComplete="family-name" required />
+          <input
+            className="form-input"
+            type="text"
+            id={`${prefix}-last`}
+            name="lastName"
+            placeholder="e.g. Khan"
+            autoComplete="family-name"
+            required
+            aria-invalid={errors.last ? "true" : undefined}
+            aria-describedby={errors.last ? `${prefix}-last-error` : undefined}
+            onChange={() => clearFieldError("last")}
+          />
+          {errors.last && <span className="field-error" id={`${prefix}-last-error`}>{errors.last}</span>}
         </div>
       </div>
 
       <div className="form-field">
         <label className="form-label" htmlFor={`${prefix}-email`}>Email</label>
-        <input className="form-input" type="email" id={`${prefix}-email`} name="email" placeholder="you@example.com" autoComplete="email" required />
+        <input
+          className="form-input"
+          type="email"
+          id={`${prefix}-email`}
+          name="email"
+          placeholder="you@example.com"
+          autoComplete="email"
+          required
+          aria-invalid={errors.email ? "true" : undefined}
+          aria-describedby={errors.email ? `${prefix}-email-error` : undefined}
+          onChange={() => clearFieldError("email")}
+        />
+        {errors.email && <span className="field-error" id={`${prefix}-email-error`}>{errors.email}</span>}
       </div>
 
       <div className="form-field">
         <label className="form-label" htmlFor={`${prefix}-phone`}>Phone</label>
-        <input className="form-input" type="tel" id={`${prefix}-phone`} name="phone" placeholder="300 1234567" autoComplete="tel" required />
+        <input
+          className="form-input"
+          type="tel"
+          id={`${prefix}-phone`}
+          name="phone"
+          autoComplete="tel"
+          required
+          aria-invalid={errors.phone ? "true" : undefined}
+          aria-describedby={errors.phone ? `${prefix}-phone-error` : undefined}
+          onChange={() => clearFieldError("phone")}
+        />
+        {errors.phone && <span className="field-error" id={`${prefix}-phone-error`}>{errors.phone}</span>}
       </div>
 
       {/* Honeypot - hidden from humans, catches spam bots */}
@@ -82,7 +139,7 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
         <input type="text" id={`${prefix}-company`} name="company" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className={`form-error${error ? " show" : ""}`} id={errorId} role="alert">{error}</p>
+      <p className={`form-error${errors.form ? " show" : ""}`} id={errorId} role="alert">{errors.form}</p>
 
       <button className="btn btn--gold btn--lg" type="submit" style={{ width: "100%" }}>Create Your Account</button>
       <p className="form-note">Protected by 2FA and 256-bit SSL encryption</p>

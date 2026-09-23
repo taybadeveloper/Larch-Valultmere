@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         <PageEffects />
         {/* intl-tel-input: country data + plugin (flags & dial codes) */}
         <Script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/data.min.js" strategy="afterInteractive" />
-        <Script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/intlTelInput.min.js" strategy="afterInteractive" />
+        <Script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/intlTelInputWithUtils.min.js" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { initPhone } from "./phone";
+import { initPhone, phoneError } from "./phone";
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactForm() {
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const itiRef = useRef(null);
@@ -27,6 +29,10 @@ export default function ContactForm() {
     []
   );
 
+  const clearFieldError = (field) => {
+    setErrors((prev) => (prev[field] ? { ...prev, [field]: "" } : prev));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -43,22 +49,26 @@ export default function ContactForm() {
     const last = document.getElementById("contact-last").value.trim();
     const email = document.getElementById("contact-email").value.trim();
     const phoneInput = document.getElementById("contact-phone");
-    const phoneValue = itiRef.current?.getNumber() || phoneInput.value;
-    const phoneDigits = phoneValue.replace(/\D/g, "");
 
-    let message = "";
-    if (!first) message = "First name is required";
-    else if (!last) message = "Last name is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) message = "Enter a valid email address";
-    else if (phoneDigits.length < 7) message = "Enter a valid phone number";
+    const next = {};
+    if (!first) next.first = "First name is required";
+    if (!last) next.last = "Last name is required";
+    if (!email) next.email = "Email is required";
+    else if (!EMAIL_RE.test(email)) next.email = "Enter a valid email address";
+    const phoneMessage = phoneError(itiRef.current, phoneInput);
+    if (phoneMessage) next.phone = phoneMessage;
 
-    if (message) {
-      setError(message);
+    if (Object.keys(next).length) {
+      setErrors(next);
       setSuccess("");
+      // Move focus to the first invalid field.
+      const firstInvalid = ["first", "last", "email", "phone"].find((f) => next[f]);
+      const el = document.getElementById(`contact-${firstInvalid}`);
+      el?.focus();
       return;
     }
 
-    setError("");
+    setErrors({});
     setSubmitting(true);
 
     // TODO: post { firstName, lastName, email, phone, countryCode } to your
@@ -77,22 +87,69 @@ export default function ContactForm() {
       <div className="form__row">
         <div className="form-field">
           <label className="form-label" htmlFor="contact-first">First name</label>
-          <input className="form-input" type="text" id="contact-first" name="firstName" placeholder="e.g. Ali" autoComplete="given-name" required />
+          <input
+            className="form-input"
+            type="text"
+            id="contact-first"
+            name="firstName"
+            placeholder="e.g. Ali"
+            autoComplete="given-name"
+            required
+            aria-invalid={errors.first ? "true" : undefined}
+            aria-describedby={errors.first ? "contact-first-error" : undefined}
+            onChange={() => clearFieldError("first")}
+          />
+          {errors.first && <span className="field-error" id="contact-first-error">{errors.first}</span>}
         </div>
         <div className="form-field">
           <label className="form-label" htmlFor="contact-last">Last name</label>
-          <input className="form-input" type="text" id="contact-last" name="lastName" placeholder="e.g. Khan" autoComplete="family-name" required />
+          <input
+            className="form-input"
+            type="text"
+            id="contact-last"
+            name="lastName"
+            placeholder="e.g. Khan"
+            autoComplete="family-name"
+            required
+            aria-invalid={errors.last ? "true" : undefined}
+            aria-describedby={errors.last ? "contact-last-error" : undefined}
+            onChange={() => clearFieldError("last")}
+          />
+          {errors.last && <span className="field-error" id="contact-last-error">{errors.last}</span>}
         </div>
       </div>
 
       <div className="form-field">
         <label className="form-label" htmlFor="contact-email">Email</label>
-        <input className="form-input" type="email" id="contact-email" name="email" placeholder="you@example.com" autoComplete="email" required />
+        <input
+          className="form-input"
+          type="email"
+          id="contact-email"
+          name="email"
+          placeholder="you@example.com"
+          autoComplete="email"
+          required
+          aria-invalid={errors.email ? "true" : undefined}
+          aria-describedby={errors.email ? "contact-email-error" : undefined}
+          onChange={() => clearFieldError("email")}
+        />
+        {errors.email && <span className="field-error" id="contact-email-error">{errors.email}</span>}
       </div>
 
       <div className="form-field">
         <label className="form-label" htmlFor="contact-phone">Phone</label>
-        <input className="form-input" type="tel" id="contact-phone" name="phone" placeholder="300 1234567" autoComplete="tel" required />
+        <input
+          className="form-input"
+          type="tel"
+          id="contact-phone"
+          name="phone"
+          autoComplete="tel"
+          required
+          aria-invalid={errors.phone ? "true" : undefined}
+          aria-describedby={errors.phone ? "contact-phone-error" : undefined}
+          onChange={() => clearFieldError("phone")}
+        />
+        {errors.phone && <span className="field-error" id="contact-phone-error">{errors.phone}</span>}
       </div>
 
       {/* Honeypot - hidden from humans, catches spam bots */}
@@ -101,7 +158,7 @@ export default function ContactForm() {
         <input type="text" id="contact-company" name="company" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className={`form-error${error ? " show" : ""}`} id="contact-error" role="alert">{error}</p>
+      <p className={`form-error${errors.form ? " show" : ""}`} id="contact-error" role="alert">{errors.form}</p>
 
       <button className="btn btn--gold btn--lg" type="submit" id="contact-submit" style={{ width: "100%" }} disabled={submitting}>
         {submitting ? "Submitting…" : "Send Message"}
