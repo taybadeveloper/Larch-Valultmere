@@ -222,7 +222,7 @@ export default function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M14 8h6v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">Real-time market insights</h3>
-              <p>Live prices, trends and 7-day sparklines for 60+ coins — refreshed every 60 seconds.</p>
+              <p>Live prices, trends and 7-day sparklines for 60+ coins, refreshed every 60 seconds.</p>
             </article>
 
             <article className="bento__card reveal">
@@ -230,7 +230,7 @@ export default function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">AI-powered strategies</h3>
-              <p className="bento__text">Automated strategies that watch the market 24/7 and act on signals — without the emotions.</p>
+              <p className="bento__text">Automated strategies that watch the market 24/7 and act on signals, without the emotions.</p>
             </article>
 
             <article className="bento__card reveal">
@@ -246,7 +246,7 @@ export default function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" /><path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">Fast withdrawals</h3>
-              <p className="bento__text">Request a payout anytime — most withdrawals are processed within 24 hours.</p>
+              <p className="bento__text">Request a payout anytime, most withdrawals are processed within 24 hours.</p>
             </article>
 
             <article className="bento__card reveal">
@@ -254,7 +254,7 @@ export default function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /><rect x="3" y="13" width="4" height="7" rx="2" stroke="currentColor" strokeWidth="2" /><rect x="17" y="13" width="4" height="7" rx="2" stroke="currentColor" strokeWidth="2" /></svg>
               </span>
               <h3 className="bento__title">24/7 human support</h3>
-              <p className="bento__text">Real people on standby around the clock — whenever you need a hand, we&rsquo;re there.</p>
+              <p className="bento__text">Real people on standby around the clock, whenever you need a hand, we&rsquo;re there.</p>
             </article>
 
             <article className="bento__card reveal">
@@ -262,7 +262,7 @@ export default function HomePage() {
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
               <h3 className="bento__title">Transparent pricing</h3>
-              <p className="bento__text">Simple, published fees on every transaction. No hidden charges — ever.</p>
+              <p className="bento__text">Simple, published fees on every transaction. No hidden charges, ever.</p>
             </article>
           </div>
 
