@@ -2756,7 +2756,7 @@ select.form-input {
 }
 
 /* ---------- Mobile: center main headings & paragraphs ---------- */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   h1,
   h2,
   h3,
@@ -2814,7 +2814,7 @@ select.form-input {
 }
 
 /* ---------- Mobile: center footer ---------- */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .footer__grid {
     text-align: center;
   }
@@ -2826,7 +2826,7 @@ select.form-input {
 }
 
 /* ---------- Mobile: center label pills above headings ---------- */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .section-label {
     display: block;
     width: fit-content;
@@ -2836,7 +2836,7 @@ select.form-input {
 }
 
 /* ---------- Mobile: center hero badge ---------- */
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .hero__badge {
     display: flex;
     width: fit-content;
