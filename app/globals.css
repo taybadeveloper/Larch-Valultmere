@@ -2819,3 +2819,13 @@ select.form-input {
     text-align: center;
   }
 }
+
+/* ---------- Mobile: center label pills above headings ---------- */
+@media (max-width: 560px) {
+  .section-label {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
