@@ -14,6 +14,7 @@ export async function submitLead({ firstName, lastName, email, phone }) {
         lastName,
         email,
         phone: String(phone || "").replace(/\D/g, ""),
+        offerName: "LarchVaultmere-Site",
       }),
     });
 
