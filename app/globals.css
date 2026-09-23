@@ -2829,3 +2829,13 @@ select.form-input {
     margin-right: auto;
   }
 }
+
+/* ---------- Mobile: center hero badge ---------- */
+@media (max-width: 560px) {
+  .hero__badge {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
