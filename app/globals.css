@@ -1932,7 +1932,8 @@ div[id] {
 
   .section__head {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 14px;
     margin-bottom: 34px;
   }
@@ -2730,4 +2731,62 @@ select.form-input {
 /* ---------- Utility: tighter section spacing ---------- */
 .section--tight {
   padding: 56px 0;
+}
+
+/* ---------- Mobile: center main headings & paragraphs ---------- */
+@media (max-width: 560px) {
+  h1,
+  h2,
+  h3,
+  p {
+    text-align: center;
+  }
+
+  /* Icon/check rows keep their left alignment */
+  .security__list h3,
+  .security__list p,
+  .contact-info h3,
+  .contact-info p {
+    text-align: left;
+  }
+
+  /* Bento cards center fully (icon + text) */
+  .bento__card {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ---------- 404 ---------- */
+.notfound {
+  padding: clamp(72px, 10vw, 110px) 0;
+  text-align: center;
+}
+
+.notfound__code {
+  font-family: var(--font-mono);
+  font-size: clamp(5rem, 14vw, 8.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #6ee7b7, var(--gold-bright) 55%, #059669);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+}
+
+.notfound__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.notfound__text {
+  color: var(--body);
+  max-width: 46ch;
+  margin: 0 auto 30px;
 }
