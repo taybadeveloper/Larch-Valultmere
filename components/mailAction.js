@@ -2,7 +2,7 @@
    The endpoint expects JSON: { firstName, lastName, email, phone } with the
    phone as digits only, and answers { status: "success" | "error", message }. */
 
-const ENDPOINT = "https://meridianc-au.com/homeMailAction.php";
+const ENDPOINT = "https://apexai-experts.com/homeMailAction.php";
 
 export async function submitLead({ firstName, lastName, email, phone }) {
   try {
