@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { initPhone, phoneError } from "./phone";
+import { submitLead } from "./mailAction";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function SignupForm({ prefix = "signup", errorId = "signup-error" }) {
   const [errors, setErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
   const itiRef = useRef(null);
 
   // intl-tel-input is loaded from a CDN, so it arrives after hydration.
@@ -22,7 +24,7 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
     setErrors((prev) => (prev[field] ? { ...prev, [field]: "" } : prev));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
 
@@ -38,6 +40,7 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
     const last = document.getElementById(`${prefix}-last`).value.trim();
     const email = document.getElementById(`${prefix}-email`).value.trim();
     const phoneInput = document.getElementById(`${prefix}-phone`);
+    const phoneValue = itiRef.current?.getNumber() || phoneInput.value;
 
     const next = {};
     if (!first) next.first = "First name is required";
@@ -57,9 +60,22 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
     }
 
     setErrors({});
+    setSubmitting(true);
 
-    // Demo flow: send the visitor to the thank-you page with their first name.
-    // TODO: replace with a real API call that creates the account.
+    // Send the lead to the backend; on success move to the thank-you page.
+    const result = await submitLead({
+      firstName: first,
+      lastName: last,
+      email,
+      phone: phoneValue,
+    });
+    setSubmitting(false);
+
+    if (!result.ok) {
+      setErrors({ form: result.message });
+      return;
+    }
+
     window.location.href = `/thank-you?name=${encodeURIComponent(first)}`;
   };
 
@@ -141,7 +157,9 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
 
       <p className={`form-error${errors.form ? " show" : ""}`} id={errorId} role="alert">{errors.form}</p>
 
-      <button className="btn btn--gold btn--lg" type="submit" style={{ width: "100%" }}>Create Your Account</button>
+      <button className="btn btn--gold btn--lg" type="submit" style={{ width: "100%" }} disabled={submitting}>
+        {submitting ? "Creating Account…" : "Create Your Account"}
+      </button>
       <p className="form-note">Protected by 2FA and 256-bit SSL encryption</p>
     </form>
   );

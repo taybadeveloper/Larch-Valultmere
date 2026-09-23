@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { initPhone, phoneError } from "./phone";
+import { submitLead } from "./mailAction";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -10,7 +11,6 @@ export default function ContactForm() {
   const [success, setSuccess] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const itiRef = useRef(null);
-  const timerRef = useRef(null);
 
   // intl-tel-input is loaded from a CDN, so it arrives after hydration.
   useEffect(() => {
@@ -21,19 +21,11 @@ export default function ContactForm() {
     });
   }, []);
 
-  // Drop the demo submission timer if the component unmounts mid-flight.
-  useEffect(
-    () => () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    },
-    []
-  );
-
   const clearFieldError = (field) => {
     setErrors((prev) => (prev[field] ? { ...prev, [field]: "" } : prev));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
 
@@ -49,6 +41,7 @@ export default function ContactForm() {
     const last = document.getElementById("contact-last").value.trim();
     const email = document.getElementById("contact-email").value.trim();
     const phoneInput = document.getElementById("contact-phone");
+    const phoneValue = itiRef.current?.getNumber() || phoneInput.value;
 
     const next = {};
     if (!first) next.first = "First name is required";
@@ -71,15 +64,24 @@ export default function ContactForm() {
     setErrors({});
     setSubmitting(true);
 
-    // TODO: post { firstName, lastName, email, phone, countryCode } to your
-    // backend / email service (e.g. Formspree, EmailJS, or your own API).
-    // Until then we simulate a short submission and confirm.
-    timerRef.current = setTimeout(() => {
-      setSubmitting(false);
-      setSuccess(`Thanks ${first} — your message has been received! (Demo: connect a backend to actually send it.)`);
-      form.reset();
-      itiRef.current?.setNumber("");
-    }, 600);
+    // Send the lead to the backend mail endpoint.
+    const result = await submitLead({
+      firstName: first,
+      lastName: last,
+      email,
+      phone: phoneValue,
+    });
+    setSubmitting(false);
+
+    if (!result.ok) {
+      setSuccess("");
+      setErrors({ form: result.message });
+      return;
+    }
+
+    setSuccess(`Thanks ${first} — your message has been received! We'll get back to you soon.`);
+    form.reset();
+    itiRef.current?.setNumber("");
   };
 
   return (
