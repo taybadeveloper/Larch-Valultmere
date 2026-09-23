@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "FAQ",
   description:
-    "Answers to the most common questions about Larch Vaultmere, accounts, deposits, withdrawals, fees, security and more.",
+    "Answers to the most common questions about <strong>Larch Vaultmere</strong>, accounts, deposits, withdrawals, fees, security and more.",
 };
 
 export default function FaqPage() {
@@ -20,15 +20,15 @@ export default function FaqPage() {
           <div className="faq">
             <div className="faq__item reveal">
               <button className="faq__question" aria-expanded="false">
-                What is Larch Vaultmere?
+                What is <strong>Larch Vaultmere</strong>?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>Larch Vaultmere is a crypto trading platform that combines real-time market data with AI-powered strategies, helping you make informed decisions without watching charts all day.</p></div>
+              <div className="faq__answer"><p><strong>Larch Vaultmere</strong> is a crypto trading platform that combines real-time market data with AI-powered strategies, helping you make informed decisions without watching charts all day.</p></div>
             </div>
 
             <div className="faq__item reveal">
               <button className="faq__question" aria-expanded="false">
-                Is Larch Vaultmere suitable for beginners?
+                Is <strong>Larch Vaultmere</strong> suitable for beginners?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
               <div className="faq__answer"><p>Yes. The platform is designed for everyone, clear dashboards, guided setup, and strategies you can activate in one click. You can also start small and learn as you go.</p></div>

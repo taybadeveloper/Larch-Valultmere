@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; <FooterYear /> Larch Vaultmere. All rights reserved.</p>
+          <p>&copy; <FooterYear /> <strong>Larch Vaultmere</strong>. All rights reserved.</p>
           <p className="footer__legal"><a href="/terms-of-use">Terms of Use</a> &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/risk-disclosure">Risk Disclosure</a></p>
         </div>
       </div>

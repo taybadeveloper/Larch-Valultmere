@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with the Larch Vaultmere team, questions, feedback or support. Our human support team is available 24/7.",
+    "Get in touch with the <strong>Larch Vaultmere</strong> team, questions, feedback or support. Our human support team is available 24/7.",
 };
 
 export default function ContactUsPage() {

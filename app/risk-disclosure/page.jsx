@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "Risk Disclosure",
   description:
-    "An honest explanation of the risks involved in cryptocurrency trading. Please read before using the Larch Vaultmere platform.",
+    "An honest explanation of the risks involved in cryptocurrency trading. Please read before using the <strong>Larch Vaultmere</strong> platform.",
 };
 
 export default function RiskDisclosurePage() {
@@ -33,7 +33,7 @@ export default function RiskDisclosurePage() {
 
             <section>
               <h2>2. No guaranteed returns</h2>
-              <p>Larch Vaultmere does not guarantee any level of profit or return. No automated tool, AI system or strategy can eliminate the risk of loss. Be deeply suspicious of any platform that promises otherwise.</p>
+              <p><strong>Larch Vaultmere</strong> does not guarantee any level of profit or return. No automated tool, AI system or strategy can eliminate the risk of loss. Be deeply suspicious of any platform that promises otherwise.</p>
             </section>
 
             <section>

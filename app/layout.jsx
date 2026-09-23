@@ -11,7 +11,7 @@ export const metadata = {
     template: "%s | Larch Vaultmere",
   },
   description:
-    "Larch Vaultmere combines real-time market data with advanced AI strategies to help you trade crypto with confidence, live prices, automated strategies, and bank-grade security.",
+    "<strong>Larch Vaultmere</strong> combines real-time market data with advanced AI strategies to help you trade crypto with confidence, live prices, automated strategies, and bank-grade security.",
 };
 
 export default function RootLayout({ children }) {
