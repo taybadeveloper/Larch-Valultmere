@@ -2911,3 +2911,16 @@ select.form-input {
   }
 }
 
+
+/* ---------- Mobile: stack Get Started benefit items ---------- */
+@media (max-width: 768px) {
+  .auth__benefit {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .auth__benefit-icon {
+    margin-bottom: 12px;
+  }
+}
