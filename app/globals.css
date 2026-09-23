@@ -2807,3 +2807,15 @@ select.form-input {
   max-width: 46ch;
   margin: 0 auto 30px;
 }
+
+/* ---------- Mobile: center footer ---------- */
+@media (max-width: 560px) {
+  .footer__grid {
+    text-align: center;
+  }
+
+  .footer__bottom {
+    justify-content: center;
+    text-align: center;
+  }
+}
