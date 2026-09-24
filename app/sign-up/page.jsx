@@ -1,4 +1,5 @@
 import SignupForm from "@/components/SignupForm";
+import PhoneScripts from "@/components/PhoneScripts";
 
 export const metadata = {
   title: "Sign Up",
@@ -64,6 +65,7 @@ export default function SignUpPage() {
           </div>
         </div>
       </section>
+      <PhoneScripts />
     </>
   );
 }

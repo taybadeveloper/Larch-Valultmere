@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import PhoneScripts from "@/components/PhoneScripts";
 
 export const metadata = {
   title: "Contact Us",
@@ -70,6 +71,7 @@ export default function ContactUsPage() {
           </div>
         </div>
       </section>
+      <PhoneScripts />
     </>
   );
 }

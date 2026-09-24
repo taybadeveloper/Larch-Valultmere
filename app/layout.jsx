@@ -1,4 +1,3 @@
-import Script from "next/script";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -44,9 +43,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <PageEffects />
-        {/* intl-tel-input: country data + plugin (flags & dial codes) */}
-        <Script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/data.min.js" strategy="afterInteractive" />
-        <Script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/intlTelInputWithUtils.min.js" strategy="afterInteractive" />
+        {/* intl-tel-input scripts load only on pages with a phone field */}
       </body>
     </html>
   );
