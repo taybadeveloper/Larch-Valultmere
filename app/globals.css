@@ -199,6 +199,7 @@ div[id] {
   font-weight: 600;
   font-size: 0.95rem;
   border: 1px solid transparent;
+  white-space: nowrap;
   transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease,
     color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -2703,6 +2704,15 @@ select.form-input {
 
 /* ---------- Tablet (561-1100px): center hero, CTA and security ---------- */
 @media (min-width: 561px) and (max-width: 1100px) {
+  /* Header: tighter nav + button spacing so nothing wraps */
+  .nav__link {
+    padding: 9px 10px;
+  }
+
+  .nav__actions .btn {
+    padding: 10px 16px;
+  }
+
   /* Footer keeps the desktop 3-column layout on tablet */
   .footer__grid,
   .footer__grid h3,
