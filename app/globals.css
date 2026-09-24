@@ -2809,3 +2809,11 @@ select.form-input {
     margin-top: 28px;
   }
 }
+
+/* ---------- Legal pages: prose stays left-aligned for readability ---------- */
+@media (max-width: 768px) {
+  .prose h2,
+  .prose p {
+    text-align: left;
+  }
+}
