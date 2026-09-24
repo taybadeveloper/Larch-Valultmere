@@ -109,12 +109,12 @@ div[id] {
 
 /* ---------- Layout helpers ---------- */
 .container {
-  width: min(1160px, 92%);
+  width: min(1300px, 94%);
   margin-inline: auto;
 }
 
 .container--narrow {
-  width: min(780px, 92%);
+  width: min(780px, 94%);
 }
 
 .sr-only {
