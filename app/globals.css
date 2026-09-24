@@ -766,13 +766,11 @@ div[id] {
   font-weight: 600;
 }
 
-.dash__coin-chg.up,
-.chg-up {
+.dash__coin-chg.up {
   color: var(--green);
 }
 
-.dash__coin-chg.down,
-.chg-down {
+.dash__coin-chg.down {
   color: var(--red);
 }
 
@@ -1669,49 +1667,6 @@ div[id] {
   gap: 14px;
 }
 
-.waitlist {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.waitlist__input {
-  flex: 1 1 220px;
-  max-width: 300px;
-  padding: 14px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  outline: none;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.waitlist__input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.waitlist__input:focus {
-  border-color: var(--gold-bright);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.waitlist__note {
-  min-height: 1.5em;
-  font-size: 0.92rem;
-  margin-bottom: 10px;
-}
-
-.waitlist__note--ok {
-  color: #6ee7a0;
-}
-
-.waitlist__note--err {
-  color: #fca5a5;
-}
-
 .cta-panel__fine {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.45);
@@ -2040,17 +1995,8 @@ div[id] {
     padding: 18px 16px 14px;
   }
 
-  .dash__value {
-    font-size: 1.55rem;
-  }
-
   .cta-panel {
     padding: 0 4px;
-  }
-
-  .waitlist__input {
-    max-width: none;
-    flex-basis: 100%;
   }
 
   /* Tuck the floating cards tighter against the dashboard on small phones */
@@ -2211,8 +2157,7 @@ div[id] {
   margin-bottom: 7px;
 }
 
-.form-input,
-.form-textarea {
+.form-input {
   width: 100%;
   padding: 13px 16px;
   border-radius: var(--radius-sm);
@@ -2223,45 +2168,15 @@ div[id] {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
+.form-input::placeholder {
   color: var(--muted);
   opacity: 0.7;
 }
 
-.form-input:focus,
-.form-textarea:focus {
+.form-input:focus {
   border-color: var(--gold-bright);
   background: var(--surface);
   box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.18);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 130px;
-}
-
-.form-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.86rem;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-.form-check input {
-  width: 17px;
-  height: 17px;
-  margin-top: 2px;
-  accent-color: var(--gold);
-  flex-shrink: 0;
-}
-
-.form-check a {
-  color: var(--gold);
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 /* Two-column field row (first + last name) */
@@ -2272,17 +2187,6 @@ div[id] {
 }
 
 /* Phone field: country code select + number input */
-.form__phone {
-  display: flex;
-  gap: 10px;
-}
-
-.form__ccode {
-  flex: 0 0 112px;
-  width: 112px;
-  cursor: pointer;
-}
-
 select.form-input {
   cursor: pointer;
   appearance: none;
