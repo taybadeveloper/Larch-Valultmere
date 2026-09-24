@@ -1634,6 +1634,7 @@ div[id] {
   color: rgba(255, 255, 255, 0.45);
   max-width: 52ch;
   margin-inline: auto;
+  margin-top: 18px;
 }
 
 /* ---------- Footer ---------- */
