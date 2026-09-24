@@ -3,7 +3,7 @@ import SignupForm from "@/components/SignupForm";
 export const metadata = {
   title: "Sign Up",
   description:
-    "Create your free Larch Vaultmere account in minutes, live market data, AI strategies and bank-grade security.",
+    "Create your free Larch Valultmere account in minutes, live market data, AI strategies and bank-grade security.",
 };
 
 export default function SignUpPage() {
@@ -13,7 +13,7 @@ export default function SignUpPage() {
       <section className="section">
         <div className="container auth">
           <div className="auth__form-card form-card--accent reveal">
-            <h1 className="auth__form-title">Open Your <strong>Larch Vaultmere</strong> Account</h1>
+            <h1 className="auth__form-title">Open Your <strong>Larch Valultmere</strong> Account</h1>
             <p className="auth__form-sub">Free to join &middot; takes less than 2 minutes</p>
 
             <SignupForm prefix="signup" errorId="signup-error" />

@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with the Larch Vaultmere team, questions, feedback or support. Our human support team is available 24/7.",
+    "Get in touch with the Larch Valultmere team, questions, feedback or support. Our human support team is available 24/7.",
 };
 
 export default function ContactUsPage() {
@@ -35,7 +35,7 @@ export default function ContactUsPage() {
                   </span>
                   <div>
                     <h3>Email us</h3>
-                    <p><a href="mailto:hello@larch-vaultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-vaultmere.com</a></p>
+                    <p><a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a></p>
                   </div>
                 </li>
                 <li>

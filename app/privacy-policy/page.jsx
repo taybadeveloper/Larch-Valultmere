@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "How Larch Vaultmere collects, uses and protects your personal information.",
+    "How Larch Valultmere collects, uses and protects your personal information.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2>1. Introduction</h2>
-              <p><strong>Larch Vaultmere</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) respects your privacy. This policy explains what information we collect when you use our website and platform, why we collect it, and how we keep it safe.</p>
+              <p><strong>Larch Valultmere</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) respects your privacy. This policy explains what information we collect when you use our website and platform, why we collect it, and how we keep it safe.</p>
               <p>By using our services, you agree to the practices described in this policy.</p>
             </section>
 
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2>7. Your rights</h2>
-              <p>Depending on where you live, you may have the right to access, correct, download or delete your personal information, and to object to certain processing. To exercise any of these rights, contact us at <a href="mailto:hello@larch-vaultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-vaultmere.com</a>.</p>
+              <p>Depending on where you live, you may have the right to access, correct, download or delete your personal information, and to object to certain processing. To exercise any of these rights, contact us at <a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a>.</p>
             </section>
 
             <section>
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2>9. Contact us</h2>
-              <p>Questions about this policy? Email us at <a href="mailto:hello@larch-vaultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-vaultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
+              <p>Questions about this policy? Email us at <a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
             </section>
           </div>
         </div>

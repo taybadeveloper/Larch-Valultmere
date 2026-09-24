@@ -3,7 +3,7 @@ import ThankYouName from "@/components/ThankYouName";
 export const metadata = {
   title: "Thank You",
   description:
-    "Your Larch Vaultmere sign-up was received. Here's what happens next.",
+    "Your Larch Valultmere sign-up was received. Here's what happens next.",
 };
 
 export default function ThankYouPage() {
@@ -17,7 +17,7 @@ export default function ThankYouPage() {
           </div>
 
           <h1 className="thankyou__title">You&rsquo;re on the list<ThankYouName />! 🎉</h1>
-          <p className="thankyou__text">Thanks for joining <strong>Larch Vaultmere</strong>. Your account request has been received, here&rsquo;s what happens next on your journey to smarter trading.</p>
+          <p className="thankyou__text">Thanks for joining <strong>Larch Valultmere</strong>. Your account request has been received, here&rsquo;s what happens next on your journey to smarter trading.</p>
 
           <div className="thankyou__steps">
             <div className="thankyou__step">

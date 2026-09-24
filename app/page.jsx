@@ -19,7 +19,7 @@ export default function HomePage() {
             </p>
             <h1 className="hero__title">Trade smarter.<br />Invest with <em>confidence</em>.</h1>
             <p className="hero__sub">
-              <strong>Larch Vaultmere</strong> combines real-time market data with advanced AI strategies to help you
+              <strong>Larch Valultmere</strong> combines real-time market data with advanced AI strategies to help you
               spot opportunities and manage risk, whether you&rsquo;re a beginner or a seasoned trader.
             </p>
 
@@ -40,7 +40,7 @@ export default function HomePage() {
             <div className="dash">
               <div className="dash__bar">
                 <span className="dash__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span className="dash__title"><strong>Larch Vaultmere</strong>, Live Markets</span>
+                <span className="dash__title"><strong>Larch Valultmere</strong>, Live Markets</span>
                 <span className="dash__live"><i aria-hidden="true"></i> LIVE</span>
               </div>
               <div className="dash__body">
@@ -346,15 +346,15 @@ export default function HomePage() {
           <div className="faq">
             <div className="faq__item reveal">
               <button className="faq__question" aria-expanded="false">
-                What is Larch Vaultmere?
+                What is Larch Valultmere?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p><strong>Larch Vaultmere</strong> is a crypto trading platform that combines real-time market data with AI-powered strategies, helping you make informed decisions without watching charts all day.</p></div>
+              <div className="faq__answer"><p><strong>Larch Valultmere</strong> is a crypto trading platform that combines real-time market data with AI-powered strategies, helping you make informed decisions without watching charts all day.</p></div>
             </div>
 
             <div className="faq__item reveal">
               <button className="faq__question" aria-expanded="false">
-                Is Larch Vaultmere suitable for beginners?
+                Is Larch Valultmere suitable for beginners?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
               <div className="faq__answer"><p>Yes. The platform is designed for everyone, clear dashboards, guided setup, and strategies you can activate in one click. You can also start small and learn as you go.</p></div>
@@ -458,7 +458,7 @@ export default function HomePage() {
           </div>
 
           <div className="auth__form-card form-card--accent reveal">
-            <h2 className="auth__form-title">Open Your <strong>Larch Vaultmere</strong> Account</h2>
+            <h2 className="auth__form-title">Open Your <strong>Larch Valultmere</strong> Account</h2>
             <p className="auth__form-sub">Free to join &middot; takes less than 2 minutes</p>
 
             <SignupForm prefix="home" errorId="home-signup-error" />

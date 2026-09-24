@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "Terms of Use",
   description:
-    "The terms and conditions that govern your use of the Larch Vaultmere platform.",
+    "The terms and conditions that govern your use of the Larch Valultmere platform.",
 };
 
 export default function TermsOfUsePage() {
@@ -11,7 +11,7 @@ export default function TermsOfUsePage() {
     <>
       {/* ===== Page hero ===== */}
       <PageHero label="Legal" title="Terms of Use">
-        <p className="page-hero__sub">The terms and conditions that govern your use of the <strong>Larch Vaultmere</strong> platform.</p>
+        <p className="page-hero__sub">The terms and conditions that govern your use of the <strong>Larch Valultmere</strong> platform.</p>
       </PageHero>
 
       {/* ===== Terms ===== */}
@@ -22,7 +22,7 @@ export default function TermsOfUsePage() {
 
             <section>
               <h2>1. Acceptance of these terms</h2>
-              <p>By accessing or using the <strong>Larch Vaultmere</strong> website and platform (&ldquo;the Service&rdquo;), you agree to be bound by these Terms of Use. If you do not agree, please do not use the Service.</p>
+              <p>By accessing or using the <strong>Larch Valultmere</strong> website and platform (&ldquo;the Service&rdquo;), you agree to be bound by these Terms of Use. If you do not agree, please do not use the Service.</p>
             </section>
 
             <section>
@@ -55,7 +55,7 @@ export default function TermsOfUsePage() {
 
             <section>
               <h2>6. Intellectual property</h2>
-              <p>All content on this website, including text, graphics, logos, and software, is the property of <strong>Larch Vaultmere</strong> or its licensors and is protected by intellectual property laws. You may not copy, modify or redistribute it without written permission.</p>
+              <p>All content on this website, including text, graphics, logos, and software, is the property of <strong>Larch Valultmere</strong> or its licensors and is protected by intellectual property laws. You may not copy, modify or redistribute it without written permission.</p>
             </section>
 
             <section>
@@ -65,7 +65,7 @@ export default function TermsOfUsePage() {
 
             <section>
               <h2>8. Limitation of liability</h2>
-              <p>To the maximum extent permitted by law, <strong>Larch Vaultmere</strong> shall not be liable for any indirect, incidental or consequential losses arising from your use of the Service, including losses from market movements, technical issues, or your own trading decisions.</p>
+              <p>To the maximum extent permitted by law, <strong>Larch Valultmere</strong> shall not be liable for any indirect, incidental or consequential losses arising from your use of the Service, including losses from market movements, technical issues, or your own trading decisions.</p>
             </section>
 
             <section>
@@ -75,7 +75,7 @@ export default function TermsOfUsePage() {
 
             <section>
               <h2>10. Contact</h2>
-              <p>Questions about these terms? Email us at <a href="mailto:hello@larch-vaultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-vaultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
+              <p>Questions about these terms? Email us at <a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
             </section>
           </div>
         </div>

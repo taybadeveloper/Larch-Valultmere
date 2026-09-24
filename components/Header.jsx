@@ -57,9 +57,9 @@ export default function Header() {
   return (
     <header className="header" id="header" ref={headerRef}>
       <div className="container header__inner">
-        <a className="brand" href={brandHref} aria-label="Larch Vaultmere home">
+        <a className="brand" href={brandHref} aria-label="Larch Valultmere home">
           <svg className="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#6ee7b7"/><stop offset="55%" stopColor="#10b981"/><stop offset="100%" stopColor="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#10161e" stroke="rgba(16,185,129,0.35)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgH)" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          <span className="brand__name">Larch<span className="brand__accent">Vaultmere</span></span>
+          <span className="brand__name">Larch<span className="brand__accent">Valultmere</span></span>
         </a>
 
         <nav className="nav" aria-label="Main navigation">

@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 export const metadata = {
   title: "How It Works",
   description:
-    "See how Larch Vaultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+    "See how Larch Valultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
 };
 
 export default function HowItWorksPage() {
@@ -11,7 +11,7 @@ export default function HowItWorksPage() {
     <>
       {/* ===== Page hero ===== */}
       <PageHero label="How It Works" title="From sign-up to first trade in four steps">
-        <p className="page-hero__sub">No complicated setup, no trading experience required. Here&rsquo;s exactly how <strong>Larch Vaultmere</strong> works, from creating your account to tracking your first results.</p>
+        <p className="page-hero__sub">No complicated setup, no trading experience required. Here&rsquo;s exactly how <strong>Larch Valultmere</strong> works, from creating your account to tracking your first results.</p>
       </PageHero>
 
       {/* ===== Steps ===== */}

@@ -1,4 +1,4 @@
-# Larch Vaultmere — Next.js Website
+# Larch Valultmere — Next.js Website
 
 A professional **dark emerald** crypto trading website built with **Next.js 15 (App Router, JavaScript)**. Fully responsive — desktop, tablet and mobile. Live market data from the CoinGecko public API, intl-tel-input phone fields with country flags, and clean URLs.
 

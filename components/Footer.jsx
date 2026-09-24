@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <a className="brand brand--light" href="/" aria-label="Larch Vaultmere home">
+            <a className="brand brand--light" href="/" aria-label="Larch Valultmere home">
               <svg className="brand__mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#6ee7b7"/><stop offset="55%" stopColor="#10b981"/><stop offset="100%" stopColor="#059669"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="#0d1318" stroke="rgba(16,185,129,0.3)"/><path d="M19 14 V50 H34 M31 14 L40 50 L49 14" stroke="url(#lgF)" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              <span className="brand__name">Larch<span className="brand__accent">Vaultmere</span></span>
+              <span className="brand__name">Larch<span className="brand__accent">Valultmere</span></span>
             </a>
             <p className="footer__tagline">Intelligent crypto trading for everyone.</p>
           </div>
@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; <FooterYear /> <strong>Larch Vaultmere</strong>. All rights reserved.</p>
+          <p>&copy; <FooterYear /> <strong>Larch Valultmere</strong>. All rights reserved.</p>
           <p className="footer__legal"><a href="/terms-of-use">Terms of Use</a> &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/risk-disclosure">Risk Disclosure</a></p>
         </div>
       </div>
