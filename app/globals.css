@@ -2832,3 +2832,10 @@ select.form-input {
     text-align: left;
   }
 }
+
+/* ---------- Mobile & tablet: hide step numbers (icons only) ---------- */
+@media (max-width: 1100px) {
+  .step__num {
+    display: none;
+  }
+}
