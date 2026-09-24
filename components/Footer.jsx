@@ -30,7 +30,6 @@ export default function Footer() {
               <li><a href="/terms-of-use">Terms of Use</a></li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
               <li><a href="/risk-disclosure">Risk Disclosure</a></li>
-              <li><a href="/sign-up">Get Started</a></li>
             </ul>
           </nav>
         </div>
