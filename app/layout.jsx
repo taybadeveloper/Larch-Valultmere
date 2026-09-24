@@ -1,4 +1,3 @@
-import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageEffects from "@/components/PageEffects";
@@ -38,7 +37,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div id="top" />
-        <AnnouncementBar />
         <Header />
         <main>{children}</main>
         <Footer />
