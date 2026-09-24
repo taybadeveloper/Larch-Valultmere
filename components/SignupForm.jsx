@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import "intl-tel-input/dist/css/intlTelInput.min.css";
 import { initPhone, phoneError } from "./phone";
 import { submitLead } from "./mailAction";
 

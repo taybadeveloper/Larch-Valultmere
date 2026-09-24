@@ -12,6 +12,7 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
+    "intl-tel-input": "^29.5.1",
     "next": "^15.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
