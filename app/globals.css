@@ -2004,6 +2004,7 @@ div[id] {
 }
 
 .page-hero__sub {
+  max-width: 90ch;
   margin-inline: auto;
   color: var(--body);
   font-size: 1.02rem;
