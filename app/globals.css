@@ -2075,6 +2075,7 @@ div[id] {
   border-left: 4px solid var(--gold-bright);
   border-radius: var(--radius-sm);
   padding: 18px 22px;
+  margin-top: 18px;
 }
 
 /* ---------- Sign-up page ---------- */
