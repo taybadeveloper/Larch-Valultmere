@@ -2850,3 +2850,20 @@ select.form-input {
     display: none;
   }
 }
+
+/* ---------- Mobile & tablet: text blocks span the full container ---------- */
+@media (max-width: 1100px) {
+  .hero__sub,
+  .section__title,
+  .section__aside,
+  .security__lead,
+  .cta-panel,
+  .cta-panel__text,
+  .cta-panel__fine,
+  .page-hero__sub,
+  .auth__side-text,
+  .thankyou__text,
+  .notfound__text {
+    max-width: none;
+  }
+}
