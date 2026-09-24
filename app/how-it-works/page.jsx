@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
             <li className="step reveal">
               <span className="step__num">1</span>
               <span className="step__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" /></svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" /></svg>
               </span>
               <h3 className="step__title">Create your free account</h3>
               <p className="step__text">Sign up with your email in under two minutes. No credit card required to explore the platform, and your first look around is completely free.</p>
