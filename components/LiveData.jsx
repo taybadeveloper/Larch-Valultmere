@@ -192,12 +192,6 @@ function tickerItemHtml(coin, data) {
     </span>`;
 }
 
-/* Coin icons go through the Next.js image optimizer: it resizes the large
-   CoinGecko PNGs to display size and serves them with long cache lifetimes. */
-function coinIconSrc(url, width) {
-  return `/_next/image?url=${encodeURIComponent(url)}&w=${width}&q=75`;
-}
-
 /* One compact list row for the remaining coins */
 function marketListRowHtml(coin) {
   const change = coin.price_change_percentage_24h ?? 0;
@@ -209,7 +203,7 @@ function marketListRowHtml(coin) {
   return `
     <div class="mrow">
       <span class="mrow__asset">
-        <img src="${coinIconSrc(coin.image, 48)}" alt="" loading="lazy" width="24" height="24" />
+        <img src="${coin.image}" alt="" loading="lazy" width="24" height="24" />
         <span class="mrow__names">${coin.name}<small>${coin.symbol.toUpperCase()}</small></span>
       </span>
       <span class="mrow__chart">${spark}</span>
@@ -231,7 +225,7 @@ function marketCardHtml(coin) {
   return `
     <article class="fcard">
       <div class="fcard__head">
-        <img class="fcard__icon" src="${coinIconSrc(coin.image, 72)}" alt="" loading="lazy" width="36" height="36" />
+        <img class="fcard__icon" src="${coin.image}" alt="" loading="lazy" width="36" height="36" />
         <span class="fcard__name">${coin.name}<small>${coin.symbol.toUpperCase()}</small></span>
         <span class="pill ${up ? "pill--up" : "pill--down"}">${up ? "+" : ""}${change.toFixed(2)}%</span>
       </div>
