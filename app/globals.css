@@ -2012,7 +2012,7 @@ div[id] {
 
 /* ---------- Legal pages (prose) ---------- */
 .prose {
-  max-width: 800px;
+  max-width: 1000px;
   margin-inline: auto;
   padding: 20px 0 8px;
 }
