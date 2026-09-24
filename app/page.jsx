@@ -339,7 +339,7 @@ export default function HomePage() {
         <div className="container container--narrow">
           <div className="section__head section__head--center">
             <div>
-              <p className="section-label">FAQ</p>
+              <p className="section-label">FAQs</p>
               <h2 className="section__title">Frequently asked questions</h2>
             </div>
           </div>

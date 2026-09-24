@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
-  title: "FAQ",
+  title: "FAQs",
   description:
     "Answers to the most common questions about Larch Valultmere, accounts, deposits, withdrawals, fees, security and more.",
 };
@@ -10,7 +10,7 @@ export default function FaqPage() {
   return (
     <>
       {/* ===== Page hero ===== */}
-      <PageHero label="FAQ" title="Frequently asked questions">
+      <PageHero label="FAQs" title="Frequently asked questions">
         <p className="page-hero__sub">Everything you need to know about accounts, deposits, withdrawals, fees and security. Can&rsquo;t find your answer? <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "3px" }}>Contact us</a>, we reply fast.</p>
       </PageHero>
 

@@ -63,7 +63,7 @@ export default function ContactUsPage() {
                   </span>
                   <div>
                     <h3>Quick answers</h3>
-                    <p>Check the <a href="/faq" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>FAQ page</a>, most questions are answered there instantly.</p>
+                    <p>Check the <a href="/faq" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>FAQs page</a>, most questions are answered there instantly.</p>
                   </div>
                 </li>
               </ul>
