@@ -87,7 +87,7 @@ export default function FaqPage() {
                 How do I contact support?
                 <span className="faq__icon" aria-hidden="true"></span>
               </button>
-              <div className="faq__answer"><p>Our human support team is available 24/7. Use the <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a> or email hello@larch-valultmere.com, most questions are answered within a few hours.</p></div>
+              <div className="faq__answer"><p>Our human support team is available 24/7. Use the <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a> or email support@larch-valultmere.com, most questions are answered within a few hours.</p></div>
             </div>
 
             <div className="faq__item reveal">

@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2>7. Your rights</h2>
-              <p>Depending on where you live, you may have the right to access, correct, download or delete your personal information, and to object to certain processing. To exercise any of these rights, contact us at <a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a>.</p>
+              <p>Depending on where you live, you may have the right to access, correct, download or delete your personal information, and to object to certain processing. To exercise any of these rights, contact us at <a href="mailto:support@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>support@larch-valultmere.com</a>.</p>
             </section>
 
             <section>
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
 
             <section>
               <h2>9. Contact us</h2>
-              <p>Questions about this policy? Email us at <a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
+              <p>Questions about this policy? Email us at <a href="mailto:support@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>support@larch-valultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
             </section>
           </div>
         </div>

@@ -75,7 +75,7 @@ export default function TermsOfUsePage() {
 
             <section>
               <h2>10. Contact</h2>
-              <p>Questions about these terms? Email us at <a href="mailto:hello@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>hello@larch-valultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
+              <p>Questions about these terms? Email us at <a href="mailto:support@larch-valultmere.com" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>support@larch-valultmere.com</a> or use our <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "2px" }}>contact form</a>.</p>
             </section>
           </div>
         </div>
