@@ -448,7 +448,7 @@ div[id] {
 
 .hero__title em {
   font-style: normal;
-  color: var(--gold);
+  color: var(--ink);
   position: relative;
 }
 
@@ -459,7 +459,7 @@ div[id] {
   right: 0;
   bottom: 4px;
   height: 10px;
-  background: var(--gold-wash);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 4px;
   z-index: -1;
 }
