@@ -90,7 +90,7 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
             type="text"
             id={`${prefix}-first`}
             name="firstName"
-            placeholder="e.g. Ali"
+            placeholder="John"
             autoComplete="given-name"
             required
             aria-invalid={errors.first ? "true" : undefined}
@@ -106,7 +106,7 @@ export default function SignupForm({ prefix = "signup", errorId = "signup-error"
             type="text"
             id={`${prefix}-last`}
             name="lastName"
-            placeholder="e.g. Khan"
+            placeholder="Son"
             autoComplete="family-name"
             required
             aria-invalid={errors.last ? "true" : undefined}

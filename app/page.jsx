@@ -1,5 +1,6 @@
 import LiveData from "@/components/LiveData";
 import SignupForm from "@/components/SignupForm";
+import PhoneScripts from "@/components/PhoneScripts";
 
 export default function HomePage() {
   return (
@@ -465,6 +466,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <PhoneScripts />
     </>
   );
 }
