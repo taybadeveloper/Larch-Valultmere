@@ -27,14 +27,31 @@ const CONFIG = {
 const $ = (selector, scope = document) => scope.querySelector(selector);
 
 /* ---------- Shared helpers ---------- */
+/* Intl.NumberFormat construction is expensive; cache one per precision */
+const priceFormatters = new Map();
+function priceFormatter(decimals) {
+  let fmt = priceFormatters.get(decimals);
+  if (!fmt) {
+    fmt = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
+    priceFormatters.set(decimals, fmt);
+  }
+  return fmt;
+}
+
 function formatPrice(price) {
   const decimals = price >= 1000 ? 0 : price >= 1 ? 2 : 4;
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  }).format(price);
+  return priceFormatter(decimals).format(price);
+}
+
+/* Runs work when the browser is idle (falls back to a microtask delay) */
+function idle(cb) {
+  const fn = window.requestIdleCallback || ((c) => setTimeout(c, 1));
+  fn(cb);
 }
 
 function chgClass(change) {
@@ -292,11 +309,15 @@ export default function LiveData() {
         const res = await fetch(url);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        marketsBody.innerHTML = renderMarkets(data);
+        // Table + hero chart are the heaviest DOM work; run them when the
+        // browser is idle so they don't block the first paint.
+        idle(() => {
+          marketsBody.innerHTML = renderMarkets(data);
 
-        // The hero dashboard panel shows Bitcoin, reuse the same API response
-        const btc = data.find((coin) => coin.id === "bitcoin");
-        if (btc) fillBtcPanel(btc);
+          // The hero dashboard panel shows Bitcoin, reuse the same API response
+          const btc = data.find((coin) => coin.id === "bitcoin");
+          if (btc) fillBtcPanel(btc);
+        });
       } catch (err) {
         console.warn("Market data: live data unavailable, retrying later.", err);
         marketsBody.innerHTML = `<p class="markets__loading">Live market data temporarily unavailable, retrying&hellip;</p>`;
