@@ -52,7 +52,7 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <div className="bento">
+          <div className="bento bento--three">
             <article className="bento__card reveal">
               <span className="bento__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
