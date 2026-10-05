@@ -2617,6 +2617,13 @@ select.form-input {
   padding: 56px 0;
 }
 
+/* Mobile & tablet: pull the contact section closer to the hero */
+@media (max-width: 1100px) {
+  .section--tight {
+    padding: 36px 0;
+  }
+}
+
 /* ---------- Mobile: center main headings & paragraphs ---------- */
 @media (max-width: 768px) {
   h1,
