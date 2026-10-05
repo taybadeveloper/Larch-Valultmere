@@ -4,6 +4,8 @@ export const metadata = {
   title: "Thank You",
   description:
     "Your Larch Valultmere sign-up was received. Here's what happens next.",
+  alternates: { canonical: "/thank-you" },
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouPage() {

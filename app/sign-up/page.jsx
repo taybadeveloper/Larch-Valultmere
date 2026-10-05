@@ -1,10 +1,18 @@
 import SignupForm from "@/components/SignupForm";
 import PhoneScripts from "@/components/PhoneScripts";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "Sign Up",
+  title: "Sign Up for Free Crypto Trading",
   description:
     "Create your free Larch Valultmere account in minutes, live market data, AI strategies and bank-grade security.",
+  alternates: { canonical: "/sign-up" },
+  openGraph: {
+    title: "Sign Up for Free Crypto Trading",
+    description:
+      "Create your free Larch Valultmere account in minutes, live market data, AI strategies and bank-grade security.",
+    url: `${SITE_URL}/sign-up`,
+  },
 };
 
 export default function SignUpPage() {

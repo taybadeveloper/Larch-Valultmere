@@ -1,9 +1,17 @@
 import PageHero from "@/components/PageHero";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "Risk Disclosure",
+  title: "Crypto Trading Risk Disclosure",
   description:
     "An honest explanation of the risks involved in cryptocurrency trading. Please read before using the Larch Valultmere platform.",
+  alternates: { canonical: "/risk-disclosure" },
+  openGraph: {
+    title: "Crypto Trading Risk Disclosure",
+    description:
+      "An honest explanation of the risks involved in cryptocurrency trading. Please read before using the Larch Valultmere platform.",
+    url: `${SITE_URL}/risk-disclosure`,
+  },
 };
 
 export default function RiskDisclosurePage() {

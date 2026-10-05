@@ -1,11 +1,19 @@
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import PhoneScripts from "@/components/PhoneScripts";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Larch Valultmere Support",
   description:
     "Get in touch with the Larch Valultmere team, questions, feedback or support. Our human support team is available 24/7.",
+  alternates: { canonical: "/contact-us" },
+  openGraph: {
+    title: "Contact Larch Valultmere Support",
+    description:
+      "Get in touch with the Larch Valultmere team, questions, feedback or support. Our human support team is available 24/7.",
+    url: `${SITE_URL}/contact-us`,
+  },
 };
 
 export default function ContactUsPage() {

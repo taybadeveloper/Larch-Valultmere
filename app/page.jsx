@@ -1,6 +1,18 @@
 import LiveData from "@/components/LiveData";
 import SignupForm from "@/components/SignupForm";
 import PhoneScripts from "@/components/PhoneScripts";
+import { SITE_URL, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
+
+export const metadata = {
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: SITE_URL,
+  },
+};
 
 export default function HomePage() {
   return (

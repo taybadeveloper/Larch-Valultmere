@@ -1,9 +1,17 @@
 import PageHero from "@/components/PageHero";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "About Us",
+  title: "About Our AI Trading Platform",
   description:
-    "Learn about Larch Valultmere, our mission to make crypto trading smarter, safer and more accessible for everyone.",
+    "Learn how Larch Valultmere's AI trading platform makes crypto smarter, safer and more accessible for everyone.",
+  alternates: { canonical: "/about-us" },
+  openGraph: {
+    title: "About Our AI Trading Platform",
+    description:
+      "Learn how Larch Valultmere's AI trading platform makes crypto smarter, safer and more accessible for everyone.",
+    url: `${SITE_URL}/about-us`,
+  },
 };
 
 export default function AboutUsPage() {

@@ -1,9 +1,17 @@
 import PageHero from "@/components/PageHero";
+import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "How It Works",
+  title: "How Our AI Trading Works",
   description:
     "See how Larch Valultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+  alternates: { canonical: "/how-it-works" },
+  openGraph: {
+    title: "How Our AI Trading Works",
+    description:
+      "See how Larch Valultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+    url: `${SITE_URL}/how-it-works`,
+  },
 };
 
 export default function HowItWorksPage() {
