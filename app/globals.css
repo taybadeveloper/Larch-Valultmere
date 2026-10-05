@@ -1868,7 +1868,7 @@ div[id] {
   /* Mobile nav drawer */
   .nav__links {
     position: fixed;
-    top: calc(var(--header-h) + 44px);
+    top: calc(var(--header-h) + 12px);
     left: 4%;
     right: 4%;
     flex-direction: column;
