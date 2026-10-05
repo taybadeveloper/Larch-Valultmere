@@ -1865,6 +1865,15 @@ div[id] {
 
   .hero__points {
     gap: 10px 18px;
+    justify-content: center;
+  }
+
+  .hero__cta {
+    justify-content: center;
+  }
+
+  .signup-trust {
+    justify-content: center;
   }
 
   /* Mobile nav drawer */
@@ -2753,6 +2762,10 @@ select.form-input {
   }
 
   .hero__points {
+    justify-content: center;
+  }
+
+  .signup-trust {
     justify-content: center;
   }
 
