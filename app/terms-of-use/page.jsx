@@ -2,12 +2,12 @@ import PageHero from "@/components/PageHero";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "Terms of Use",
+  title: "Terms of Use & Service Agreement",
   description:
     "The terms and conditions that govern your use of the Larch Valultmere platform.",
   alternates: { canonical: "/terms-of-use" },
   openGraph: {
-    title: "Terms of Use",
+    title: "Terms of Use & Service Agreement",
     description:
       "The terms and conditions that govern your use of the Larch Valultmere platform.",
     url: `${SITE_URL}/terms-of-use`,

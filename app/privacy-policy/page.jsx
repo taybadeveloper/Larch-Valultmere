@@ -2,12 +2,12 @@ import PageHero from "@/components/PageHero";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy & Data Security",
   description:
     "How Larch Valultmere collects, uses and protects your personal information.",
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
-    title: "Privacy Policy",
+    title: "Privacy Policy & Data Security",
     description:
       "How Larch Valultmere collects, uses and protects your personal information.",
     url: `${SITE_URL}/privacy-policy`,

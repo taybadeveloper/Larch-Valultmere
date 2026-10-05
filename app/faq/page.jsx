@@ -2,12 +2,12 @@ import PageHero from "@/components/PageHero";
 import { SITE_URL } from "@/lib/seo";
 
 export const metadata = {
-  title: "Crypto Trading FAQs",
+  title: "Crypto Trading FAQs: Fees & Security",
   description:
     "Answers to common questions about Larch Valultmere, crypto trading, accounts, deposits, withdrawals, fees and security.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "Crypto Trading FAQs",
+    title: "Crypto Trading FAQs: Fees & Security",
     description:
       "Answers to common questions about Larch Valultmere, crypto trading, accounts, deposits, withdrawals, fees and security.",
     url: `${SITE_URL}/faq`,
