@@ -4,12 +4,12 @@ import { SITE_URL } from "@/lib/seo";
 export const metadata = {
   title: "Privacy Policy & Data Security",
   description:
-    "How Larch Valultmere collects, uses and protects your personal information.",
+    "How Larch Valultmere collects, uses and protects your personal information while you use our AI crypto trading platform.",
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
     title: "Privacy Policy & Data Security",
     description:
-      "How Larch Valultmere collects, uses and protects your personal information.",
+      "How Larch Valultmere collects, uses and protects your personal information while you use our AI crypto trading platform.",
     url: `${SITE_URL}/privacy-policy`,
   },
 };

@@ -6,12 +6,13 @@ import { SITE_URL } from "@/lib/seo";
 export const metadata = {
   title: "Contact Crypto Trading Support",
   description:
-    "Get in touch with the Larch Valultmere team, questions, feedback or support. Our human support team is available 24/7.",
+    "Get in touch with the Larch Valultmere team for crypto trading support, questions or feedback. Our human support team is available 24/7.",
+  keywords: ["contact crypto trading support", "crypto trading help", "Larch Valultmere support"],
   alternates: { canonical: "/contact-us" },
   openGraph: {
     title: "Contact Crypto Trading Support",
     description:
-      "Get in touch with the Larch Valultmere team, questions, feedback or support. Our human support team is available 24/7.",
+      "Get in touch with the Larch Valultmere team for crypto trading support, questions or feedback. Our human support team is available 24/7.",
     url: `${SITE_URL}/contact-us`,
   },
 };

@@ -6,6 +6,13 @@ import { SITE_URL, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
 export const metadata = {
   title: { absolute: HOME_TITLE },
   description: HOME_DESCRIPTION,
+  keywords: [
+    "AI crypto trading",
+    "crypto trading platform",
+    "AI trading strategies",
+    "cryptocurrency trading",
+    "Larch Valultmere",
+  ],
   alternates: { canonical: "/" },
   openGraph: {
     title: HOME_TITLE,
@@ -30,7 +37,7 @@ export default function HomePage() {
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               AI-Powered Crypto Trading
             </p>
-            <h1 className="hero__title">Trade smarter.<br />Invest with <em>confidence</em>.</h1>
+            <h1 className="hero__title">Trade crypto smarter.<br />Invest with <em>confidence</em>.</h1>
             <p className="hero__sub">
               <strong>Larch Valultmere</strong> combines real-time market data with advanced AI strategies to help you
               spot opportunities and manage risk, whether you&rsquo;re a beginner or a seasoned trader.

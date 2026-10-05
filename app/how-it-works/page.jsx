@@ -4,12 +4,13 @@ import { SITE_URL } from "@/lib/seo";
 export const metadata = {
   title: "How Our AI Trading Works",
   description:
-    "See how Larch Valultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+    "See how Larch Valultmere's AI crypto trading works: create an account, fund your wallet, activate AI strategies and trade crypto in four simple steps.",
+  keywords: ["how crypto trading works", "AI trading strategies", "crypto trading platform"],
   alternates: { canonical: "/how-it-works" },
   openGraph: {
     title: "How Our AI Trading Works",
     description:
-      "See how Larch Valultmere works, create an account, fund your wallet, activate AI strategies and track your progress, all in four simple steps.",
+      "See how Larch Valultmere's AI crypto trading works: create an account, fund your wallet, activate AI strategies and trade crypto in four simple steps.",
     url: `${SITE_URL}/how-it-works`,
   },
 };
@@ -18,7 +19,7 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* ===== Page hero ===== */}
-      <PageHero label="How It Works" title="From sign-up to first trade in four steps">
+      <PageHero label="How It Works" title="From sign-up to your first crypto trade in four steps">
         <p className="page-hero__sub">No complicated setup, no trading experience required. Here&rsquo;s exactly how <strong>Larch Valultmere</strong> works, from creating your account to tracking your first results.</p>
       </PageHero>
 

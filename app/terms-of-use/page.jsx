@@ -4,12 +4,12 @@ import { SITE_URL } from "@/lib/seo";
 export const metadata = {
   title: "Terms of Use & Service Agreement",
   description:
-    "The terms and conditions that govern your use of the Larch Valultmere platform.",
+    "The terms and conditions that govern your use of the Larch Valultmere AI crypto trading platform and its services.",
   alternates: { canonical: "/terms-of-use" },
   openGraph: {
     title: "Terms of Use & Service Agreement",
     description:
-      "The terms and conditions that govern your use of the Larch Valultmere platform.",
+      "The terms and conditions that govern your use of the Larch Valultmere AI crypto trading platform and its services.",
     url: `${SITE_URL}/terms-of-use`,
   },
 };

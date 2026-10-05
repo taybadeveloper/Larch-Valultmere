@@ -5,6 +5,7 @@ export const metadata = {
   title: "About Our AI Trading Platform",
   description:
     "Learn how Larch Valultmere's AI trading platform makes crypto smarter, safer and more accessible for everyone.",
+  keywords: ["about Larch Valultmere", "AI trading platform", "crypto trading platform"],
   alternates: { canonical: "/about-us" },
   openGraph: {
     title: "About Our AI Trading Platform",

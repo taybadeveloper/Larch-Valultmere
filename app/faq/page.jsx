@@ -5,6 +5,7 @@ export const metadata = {
   title: "Crypto Trading FAQs: Fees & Security",
   description:
     "Answers to common questions about Larch Valultmere, crypto trading, accounts, deposits, withdrawals, fees and security.",
+  keywords: ["crypto trading FAQ", "crypto trading questions", "crypto trading fees", "crypto security"],
   alternates: { canonical: "/faq" },
   openGraph: {
     title: "Crypto Trading FAQs: Fees & Security",
@@ -89,7 +90,7 @@ export default function FaqPage() {
       />
 
       {/* ===== Page hero ===== */}
-      <PageHero label="FAQs" title="Frequently asked questions">
+      <PageHero label="FAQs" title="Crypto Trading FAQs">
         <p className="page-hero__sub">Everything you need to know about accounts, deposits, withdrawals, fees and security. Can&rsquo;t find your answer? <a href="/contact-us" style={{ color: "var(--gold)", textDecoration: "underline", textUnderlineOffset: "3px" }}>Contact us</a>, we reply fast.</p>
       </PageHero>
 

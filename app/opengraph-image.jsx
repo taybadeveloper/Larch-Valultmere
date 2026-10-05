@@ -60,7 +60,7 @@ export default function OpengraphImage() {
         {/* Headline */}
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 72, lineHeight: 1.15, fontWeight: 800, color: "#e6edf2" }}>
-            Trade smarter.
+            Trade crypto smarter.
           </div>
           <div style={{ fontSize: 72, lineHeight: 1.15, fontWeight: 800, color: "#e6edf2" }}>
             Invest with confidence.

@@ -5,12 +5,13 @@ import { SITE_URL } from "@/lib/seo";
 export const metadata = {
   title: "Sign Up for Free Crypto Trading",
   description:
-    "Create your free Larch Valultmere account in minutes, live market data, AI strategies and bank-grade security.",
+    "Create your free Larch Valultmere account and start AI crypto trading in minutes: live market data, automated strategies and bank-grade security.",
+  keywords: ["sign up crypto trading", "crypto trading account", "AI crypto trading"],
   alternates: { canonical: "/sign-up" },
   openGraph: {
     title: "Sign Up for Free Crypto Trading",
     description:
-      "Create your free Larch Valultmere account in minutes, live market data, AI strategies and bank-grade security.",
+      "Create your free Larch Valultmere account and start AI crypto trading in minutes: live market data, automated strategies and bank-grade security.",
     url: `${SITE_URL}/sign-up`,
   },
 };
