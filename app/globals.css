@@ -1582,6 +1582,8 @@ div[id] {
   padding: 0 24px;
   color: var(--muted);
   font-size: 0.94rem;
+  /* Beats the mobile "center all p" rule so answers stay left on every device */
+  text-align: left;
 }
 
 .faq__item.open .faq__answer > p {
