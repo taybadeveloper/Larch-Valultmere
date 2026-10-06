@@ -2641,6 +2641,10 @@ select.form-input {
     text-align: left;
   }
 
+  .security__lead {
+    text-align: left;
+  }
+
   /* Bento cards center fully (icon + text) */
   .bento__card {
     align-items: center;
@@ -2798,7 +2802,7 @@ select.form-input {
     margin-bottom: 12px;
   }
 
-  /* Security */
+  /* Security: heading stays centered, paragraph + tick list stay left-aligned */
   .security__copy {
     text-align: center;
   }
@@ -2809,23 +2813,18 @@ select.form-input {
   }
 
   .security__lead {
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
   }
 
   .security__list li {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    text-align: left;
   }
 
   .security__list h3,
   .security__list p {
-    text-align: center;
-  }
-
-  .security__list .security__check {
-    margin-bottom: 12px;
+    text-align: left;
   }
 }
 
