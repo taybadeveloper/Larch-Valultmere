@@ -26,6 +26,14 @@ const CONFIG = {
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 
+/* CoinGecko's image CDN sends no cache headers, so Lighthouse flags every
+ * icon as "no cache lifetime". Route them through our own /coin-images proxy,
+ * which serves them immutable for a year. */
+function localCoinImage(url) {
+  const prefix = "https://coin-images.coingecko.com/";
+  return url?.startsWith(prefix) ? `/coin-images/${url.slice(prefix.length)}` : url;
+}
+
 /* ---------- Shared helpers ---------- */
 /* Intl.NumberFormat construction is expensive; cache one per precision */
 const priceFormatters = new Map();
@@ -220,7 +228,7 @@ function marketListRowHtml(coin) {
   return `
     <div class="mrow">
       <span class="mrow__asset">
-        <img src="${coin.image}" alt="" loading="lazy" width="24" height="24" />
+        <img src="${localCoinImage(coin.image)}" alt="" loading="lazy" width="24" height="24" />
         <span class="mrow__names">${coin.name}<small>${coin.symbol.toUpperCase()}</small></span>
       </span>
       <span class="mrow__chart">${spark}</span>
@@ -242,7 +250,7 @@ function marketCardHtml(coin) {
   return `
     <article class="fcard">
       <div class="fcard__head">
-        <img class="fcard__icon" src="${coin.image}" alt="" loading="lazy" width="36" height="36" />
+        <img class="fcard__icon" src="${localCoinImage(coin.image)}" alt="" loading="lazy" width="36" height="36" />
         <span class="fcard__name">${coin.name}<small>${coin.symbol.toUpperCase()}</small></span>
         <span class="pill ${up ? "pill--up" : "pill--down"}">${up ? "+" : ""}${change.toFixed(2)}%</span>
       </div>
