@@ -2641,10 +2641,6 @@ select.form-input {
     text-align: left;
   }
 
-  .security__lead {
-    text-align: left;
-  }
-
   /* Bento cards center fully (icon + text) */
   .bento__card {
     align-items: center;
@@ -2802,7 +2798,7 @@ select.form-input {
     margin-bottom: 12px;
   }
 
-  /* Security: heading stays centered, paragraph + tick list stay left-aligned */
+  /* Security: heading + paragraph centered, tick list stays left-aligned */
   .security__copy {
     text-align: center;
   }
@@ -2813,7 +2809,6 @@ select.form-input {
   }
 
   .security__lead {
-    text-align: left;
     margin-left: auto;
     margin-right: auto;
   }
