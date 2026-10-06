@@ -70,13 +70,25 @@ export function phoneError(instance, input) {
   return digits.length >= 7 ? "" : "Enter a valid phone number";
 }
 
-/* Initializes intl-tel-input on an input. Polls for the CDN script (it loads
-   after hydration) and returns a cleanup function. Falls back to a plain
-   input if the CDN never loads. */
+/* Initializes intl-tel-input on an input. The heavy work (country data,
+   dropdown, geo lookup) is deferred until the visitor focuses the phone
+   field, keeping it off the load-time main thread. Polls for the CDN script
+   (it loads lazily when the browser is idle) and returns a cleanup function.
+   Falls back to a plain input if the CDN never loads. */
 export function initPhone(input, onReady) {
   let instance = null;
   let tries = 0;
   let done = false;
+  let started = false;
+  let intervalId = null;
+
+  const stopPolling = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  };
+
   const attempt = () => {
     if (done) return;
     if (window.intlTelInput && input) {
@@ -97,17 +109,27 @@ export function initPhone(input, onReady) {
       input.addEventListener("input", () => enforceDigits(input, instance));
       input.addEventListener("countrychange", () => enforceDigits(input, instance));
       done = true;
+      stopPolling();
       onReady(instance);
-    } else if (++tries > 100) {
+    } else if (++tries > 300) {
       done = true;
+      stopPolling();
       onReady(null);
     }
   };
-  attempt();
-  const id = setInterval(attempt, 200);
+
+  const start = () => {
+    if (started || done) return;
+    started = true;
+    attempt();
+    intervalId = setInterval(attempt, 200);
+  };
+  input.addEventListener("focus", start, { once: true });
+  input.addEventListener("click", start, { once: true });
+
   return () => {
     done = true;
-    clearInterval(id);
+    stopPolling();
     if (instance) instance.destroy();
   };
 }
