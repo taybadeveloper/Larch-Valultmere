@@ -28,6 +28,8 @@ export async function GET(_request, { params }) {
 
     const headers = new Headers();
     headers.set("Cache-Control", "public, max-age=31536000, immutable");
+    // Vercel CDN caches function responses on this header (saves function invocations)
+    headers.set("CDN-Cache-Control", "public, max-age=31536000, immutable");
     headers.set("Content-Type", res.headers.get("content-type") ?? "image/png");
     return new Response(res.body, { headers });
   } catch {
