@@ -407,7 +407,7 @@ div[id] {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 56px;
+  gap: 32px;
 }
 
 .hero__visual {
